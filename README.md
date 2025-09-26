@@ -21,12 +21,13 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 
 ### Core Developer Tools
 
-| Guide                                       | Description                     | Key Topics                                                          |
-| ------------------------------------------- | ------------------------------- | ------------------------------------------------------------------- |
-| [**Git Cheat Sheet**](./git.md)             | Version control with Git        | Commands, branching, merging, workflows, best practices             |
-| [**Docker Cheat Sheet**](./docker.md)       | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices      |
-| [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation  | Variables, loops, functions, file operations, debugging             |
-| [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns |
+| Guide                                       | Description                     | Key Topics                                                           |
+| ------------------------------------------- | ------------------------------- | -------------------------------------------------------------------- |
+| [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation  | Variables, loops, functions, file operations, debugging              |
+| [**Docker Cheat Sheet**](./docker.md)       | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices       |
+| [**Git Cheat Sheet**](./git.md)             | Version control with Git        | Commands, branching, merging, workflows, best practices              |
+| [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns  |
+| [**SQL Cheat Sheet**](./sql.md)             | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions |
 
 ### Documentation and Editing
 
@@ -187,9 +188,9 @@ To contribute or customize these cheat sheets:
 Planned additions:
 
 - [x] Regex Cheat Sheet ([view](./regex.md))
+- [x] SQL Cheat Sheet ([view](./sql.md))
 - [ ] Python Cheat Sheet
 - [ ] JavaScript/Node.js Cheat Sheet
-- [ ] SQL Cheat Sheet
 - [ ] Linux Commands Cheat Sheet
 - [ ] HTTP Status Codes Reference
 
