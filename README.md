@@ -21,25 +21,28 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 
 ### Core Developer Tools
 
-| Guide | Description | Key Topics |
-|-------|-------------|------------|
-| [**Git Cheat Sheet**](./git.md) | Version control with Git | Commands, branching, merging, workflows, best practices |
-| [**Docker Cheat Sheet**](./docker.md) | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices |
-| [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation | Variables, loops, functions, file operations, debugging |
+| Guide                                       | Description                     | Key Topics                                                          |
+| ------------------------------------------- | ------------------------------- | ------------------------------------------------------------------- |
+| [**Git Cheat Sheet**](./git.md)             | Version control with Git        | Commands, branching, merging, workflows, best practices             |
+| [**Docker Cheat Sheet**](./docker.md)       | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices      |
+| [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation  | Variables, loops, functions, file operations, debugging             |
+| [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns |
 
 ### Documentation and Editing
 
-| Guide | Description | Key Topics |
-|-------|-------------|------------|
+| Guide                                     | Description                     | Key Topics                                      |
+| ----------------------------------------- | ------------------------------- | ----------------------------------------------- |
 | [**Markdown Cheat Sheet**](./markdown.md) | Document formatting and writing | Syntax, tables, links, GitHub flavored markdown |
-| [**VS Code Cheat Sheet**](./vscode.md) | Code editor productivity | Shortcuts, extensions, debugging, customization |
+| [**VS Code Cheat Sheet**](./vscode.md)    | Code editor productivity        | Shortcuts, extensions, debugging, customization |
 
 ## 🚀 Quick Start
 
 ### Browse Online
+
 Simply click on any of the cheat sheet links above to view them directly on GitHub.
 
 ### Clone Locally
+
 ```bash
 # Clone the repository
 git clone https://github.com/StevenGonzalez/dev-cheat-sheets.git
@@ -53,6 +56,7 @@ vim .   # Vim
 ```
 
 ### Download Individual Files
+
 Right-click on any `.md` file in the repository and select "Save link as" to download individual cheat sheets.
 
 ## 📖 How to Use
@@ -68,6 +72,7 @@ Each cheat sheet is structured for maximum usability:
 ### Example Usage
 
 Need to remember Git commands?
+
 ```bash
 # Quick reference from git.md
 git status                    # Check repository status
@@ -77,6 +82,7 @@ git push origin main          # Push to remote
 ```
 
 Setting up a Docker container?
+
 ```bash
 # From docker.md
 docker run -d -p 3000:3000 --name myapp node:16-alpine
@@ -89,6 +95,7 @@ docker exec -it myapp /bin/sh
 We welcome contributions! Here's how you can help:
 
 ### Adding New Cheat Sheets
+
 1. Fork the repository
 2. Create a new `.md` file following our template structure
 3. Include a comprehensive table of contents
@@ -96,35 +103,43 @@ We welcome contributions! Here's how you can help:
 5. Submit a pull request
 
 ### Improving Existing Guides
+
 - Fix typos or errors
 - Add new examples or commands
 - Update outdated information
 - Improve explanations
 
 ### Cheat Sheet Template
+
 ```markdown
 # Tool Name Cheat Sheet
 
 ## Table of Contents
+
 - [Basic Usage](#basic-usage)
 - [Advanced Features](#advanced-features)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
 
 ## Basic Usage
+
 <!-- Content here -->
 
 ## Advanced Features
+
 <!-- Content here -->
 
 ## Best Practices
+
 <!-- Content here -->
 
 ## Troubleshooting
+
 <!-- Content here -->
 ```
 
 ### Guidelines
+
 - Keep examples practical and tested
 - Use consistent formatting
 - Include both beginner and advanced content
@@ -134,6 +149,7 @@ We welcome contributions! Here's how you can help:
 ## 📝 Format Standards
 
 All cheat sheets follow these standards:
+
 - **Markdown Format**: Easy to read and edit
 - **Code Blocks**: Syntax highlighted examples
 - **Tables**: For comparing options or shortcuts
@@ -145,17 +161,20 @@ All cheat sheets follow these standards:
 To contribute or customize these cheat sheets:
 
 1. **Prerequisites**
+
    - Git installed
    - Markdown editor (VS Code recommended)
    - Basic knowledge of the tool you're documenting
 
 2. **Setup**
+
    ```bash
    git clone https://github.com/StevenGonzalez/dev-cheat-sheets.git
    cd dev-cheat-sheets
    ```
 
 3. **Preview Changes**
+
    - Use VS Code's built-in markdown preview (`Ctrl+Shift+V`)
    - Or any markdown preview tool
 
@@ -166,11 +185,12 @@ To contribute or customize these cheat sheets:
 ## 📊 What's Next?
 
 Planned additions:
+
+- [x] Regex Cheat Sheet ([view](./regex.md))
 - [ ] Python Cheat Sheet
 - [ ] JavaScript/Node.js Cheat Sheet
 - [ ] SQL Cheat Sheet
 - [ ] Linux Commands Cheat Sheet
-- [ ] Regex Cheat Sheet
 - [ ] HTTP Status Codes Reference
 
 ## 💡 Tips for Maximum Benefit
