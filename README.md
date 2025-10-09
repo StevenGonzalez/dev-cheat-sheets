@@ -26,6 +26,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation  | Variables, loops, functions, file operations, debugging              |
 | [**Docker Cheat Sheet**](./docker.md)       | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices       |
 | [**Git Cheat Sheet**](./git.md)             | Version control with Git        | Commands, branching, merging, workflows, best practices              |
+| [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices |
 | [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns  |
 | [**SQL Cheat Sheet**](./sql.md)             | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions |
 
@@ -101,11 +102,10 @@ All cheat sheets follow these standards:
 - **Links**: Internal navigation and external resources
 - **Emojis**: Visual cues for better scanning
 
-##  What's Next?
+## 📊 What's Next?
 
 Planned additions:
 - [ ] Python Cheat Sheet
-- [ ] JavaScript/Node.js Cheat Sheet
 - [ ] Linux Commands Cheat Sheet
 - [ ] HTTP Status Codes Reference
 
