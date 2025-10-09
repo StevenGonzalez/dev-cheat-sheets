@@ -30,6 +30,12 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns  |
 | [**SQL Cheat Sheet**](./sql.md)             | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions |
 
+### Web Development References
+
+| Guide                                     | Description                     | Key Topics                                      |
+| ----------------------------------------- | ------------------------------- | ----------------------------------------------- |
+| [**HTTP Status Codes Reference**](./http-status-codes.md) | Web response status codes | 1xx-5xx codes, RESTful APIs, browser behavior, debugging, best practices |
+
 ### Documentation and Editing
 
 | Guide                                     | Description                     | Key Topics                                      |
@@ -101,13 +107,6 @@ All cheat sheets follow these standards:
 - **Tables**: For comparing options or shortcuts
 - **Links**: Internal navigation and external resources
 - **Emojis**: Visual cues for better scanning
-
-## 📊 What's Next?
-
-Planned additions:
-- [ ] Python Cheat Sheet
-- [ ] Linux Commands Cheat Sheet
-- [ ] HTTP Status Codes Reference
 
 ## 💡 Tips for Maximum Benefit
 
