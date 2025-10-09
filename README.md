@@ -91,62 +91,6 @@ docker logs myapp
 docker exec -it myapp /bin/sh
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Adding New Cheat Sheets
-
-1. Fork the repository
-2. Create a new `.md` file following our template structure
-3. Include a comprehensive table of contents
-4. Add practical examples and best practices
-5. Submit a pull request
-
-### Improving Existing Guides
-
-- Fix typos or errors
-- Add new examples or commands
-- Update outdated information
-- Improve explanations
-
-### Cheat Sheet Template
-
-```markdown
-# Tool Name Cheat Sheet
-
-## Table of Contents
-
-- [Basic Usage](#basic-usage)
-- [Advanced Features](#advanced-features)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
-
-## Basic Usage
-
-<!-- Content here -->
-
-## Advanced Features
-
-<!-- Content here -->
-
-## Best Practices
-
-<!-- Content here -->
-
-## Troubleshooting
-
-<!-- Content here -->
-```
-
-### Guidelines
-
-- Keep examples practical and tested
-- Use consistent formatting
-- Include both beginner and advanced content
-- Add explanations for complex commands
-- Follow markdown best practices
-
 ## 📝 Format Standards
 
 All cheat sheets follow these standards:
@@ -157,38 +101,9 @@ All cheat sheets follow these standards:
 - **Links**: Internal navigation and external resources
 - **Emojis**: Visual cues for better scanning
 
-## 🔧 Local Development
-
-To contribute or customize these cheat sheets:
-
-1. **Prerequisites**
-
-   - Git installed
-   - Markdown editor (VS Code recommended)
-   - Basic knowledge of the tool you're documenting
-
-2. **Setup**
-
-   ```bash
-   git clone https://github.com/StevenGonzalez/dev-cheat-sheets.git
-   cd dev-cheat-sheets
-   ```
-
-3. **Preview Changes**
-
-   - Use VS Code's built-in markdown preview (`Ctrl+Shift+V`)
-   - Or any markdown preview tool
-
-4. **Test Examples**
-   - Verify all code examples work
-   - Test commands in appropriate environments
-
-## 📊 What's Next?
+##  What's Next?
 
 Planned additions:
-
-- [x] Regex Cheat Sheet ([view](./regex.md))
-- [x] SQL Cheat Sheet ([view](./sql.md))
 - [ ] Python Cheat Sheet
 - [ ] JavaScript/Node.js Cheat Sheet
 - [ ] Linux Commands Cheat Sheet
@@ -200,7 +115,6 @@ Planned additions:
 2. **Star**: Star the repository to keep track of updates
 3. **Local Copy**: Clone for offline access
 4. **Print**: Some developers prefer printed references
-5. **Contribute**: Share your own tips and improvements
 
 ## 🌟 Why These Tools?
 
@@ -222,12 +136,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with feedback from developers of all skill levels
 - Continuously updated based on industry best practices
 
-## 📞 Contact
-
-- **GitHub Issues**: For bugs, questions, or suggestions about the cheat sheets
-- **Pull Requests**: For contributions and improvements
-- **Discussions**: For general questions and community interaction
-
 ---
 
-**Happy coding!** 🚀 If you find these cheat sheets helpful, please consider starring the repository and sharing it with other developers.
+**Happy coding!** 🚀
