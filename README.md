@@ -34,6 +34,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 
 | Guide                                     | Description                     | Key Topics                                      |
 | ----------------------------------------- | ------------------------------- | ----------------------------------------------- |
+| [**CSS Cheat Sheet**](./css.md)          | Styling and layout for web pages | Selectors, flexbox, grid, animations, responsive design, modern CSS |
 | [**HTTP Status Codes Reference**](./http-status-codes.md) | Web response status codes | 1xx-5xx codes, RESTful APIs, browser behavior, debugging, best practices |
 
 ### Documentation and Editing
@@ -77,27 +78,6 @@ Each cheat sheet is structured for maximum usability:
 4. **Tips & Best Practices** - Professional insights
 5. **Troubleshooting** - Common issues and solutions
 
-### Example Usage
-
-Need to remember Git commands?
-
-```bash
-# Quick reference from git.md
-git status                    # Check repository status
-git add .                     # Stage all changes
-git commit -m "Your message"  # Commit with message
-git push origin main          # Push to remote
-```
-
-Setting up a Docker container?
-
-```bash
-# From docker.md
-docker run -d -p 3000:3000 --name myapp node:16-alpine
-docker logs myapp
-docker exec -it myapp /bin/sh
-```
-
 ## 📝 Format Standards
 
 All cheat sheets follow these standards:
@@ -114,16 +94,6 @@ All cheat sheets follow these standards:
 2. **Star**: Star the repository to keep track of updates
 3. **Local Copy**: Clone for offline access
 4. **Print**: Some developers prefer printed references
-
-## 🌟 Why These Tools?
-
-The tools covered in this repository represent the core of modern software development:
-
-- **Git**: Essential for version control and collaboration
-- **Docker**: Critical for containerization and deployment
-- **Bash**: Fundamental for automation and system administration
-- **Markdown**: Standard for documentation and README files
-- **VS Code**: Popular editor with extensive capabilities
 
 ## 📜 License
 
