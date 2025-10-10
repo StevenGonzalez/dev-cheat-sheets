@@ -21,21 +21,22 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 
 ### Core Developer Tools
 
-| Guide                                       | Description                     | Key Topics                                                           |
-| ------------------------------------------- | ------------------------------- | -------------------------------------------------------------------- |
-| [**Bash Scripting Cheat Sheet**](./bash.md) | Shell scripting and automation  | Variables, loops, functions, file operations, debugging              |
-| [**Docker Cheat Sheet**](./docker.md)       | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices       |
-| [**Git Cheat Sheet**](./git.md)             | Version control with Git        | Commands, branching, merging, workflows, best practices              |
+| Guide                                                 | Description                     | Key Topics                                                             |
+| ----------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------- |
+| [**Bash Scripting Cheat Sheet**](./bash.md)           | Shell scripting and automation  | Variables, loops, functions, file operations, debugging                |
+| [**Docker Cheat Sheet**](./docker.md)                 | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices         |
+| [**Git Cheat Sheet**](./git.md)                       | Version control with Git        | Commands, branching, merging, workflows, best practices                |
 | [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices |
-| [**Regex Cheat Sheet**](./regex.md)         | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns  |
-| [**SQL Cheat Sheet**](./sql.md)             | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions |
+| [**Python Cheat Sheet**](./python.md)                 | Core language and scripting     | Syntax, data structures, functions, classes, libraries, best practices |
+| [**Regex Cheat Sheet**](./regex.md)                   | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns    |
+| [**SQL Cheat Sheet**](./sql.md)                       | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions   |
 
 ### Web Development References
 
-| Guide                                     | Description                     | Key Topics                                      |
-| ----------------------------------------- | ------------------------------- | ----------------------------------------------- |
-| [**CSS Cheat Sheet**](./css.md)          | Styling and layout for web pages | Selectors, flexbox, grid, animations, responsive design, modern CSS |
-| [**HTTP Status Codes Reference**](./http-status-codes.md) | Web response status codes | 1xx-5xx codes, RESTful APIs, browser behavior, debugging, best practices |
+| Guide                                                     | Description                      | Key Topics                                                               |
+| --------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------ |
+| [**CSS Cheat Sheet**](./css.md)                           | Styling and layout for web pages | Selectors, flexbox, grid, animations, responsive design, modern CSS      |
+| [**HTTP Status Codes Reference**](./http-status-codes.md) | Web response status codes        | 1xx-5xx codes, RESTful APIs, browser behavior, debugging, best practices |
 
 ### Documentation and Editing
 
