@@ -21,16 +21,17 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 
 ### Core Developer Tools
 
-| Guide                                                 | Description                     | Key Topics                                                             |
-| ----------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------- |
-| [**Bash Scripting Cheat Sheet**](./bash.md)           | Shell scripting and automation  | Variables, loops, functions, file operations, debugging                |
-| [**Docker Cheat Sheet**](./docker.md)                 | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices         |
-| [**Git Cheat Sheet**](./git.md)                       | Version control with Git        | Commands, branching, merging, workflows, best practices                |
-| [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices |
-| [**Linux Commands Cheat Sheet**](./linux.md)          | Essential terminal commands     | File operations, process management, networking, system admin, SSH     |
-| [**Python Cheat Sheet**](./python.md)                 | Core language and scripting     | Syntax, data structures, functions, classes, libraries, best practices |
-| [**Regex Cheat Sheet**](./regex.md)                   | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns    |
-| [**SQL Cheat Sheet**](./sql.md)                       | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions   |
+| Guide                                                 | Description                     | Key Topics                                                              |
+| ----------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
+| [**Bash Scripting Cheat Sheet**](./bash.md)           | Shell scripting and automation  | Variables, loops, functions, file operations, debugging                 |
+| [**Docker Cheat Sheet**](./docker.md)                 | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices          |
+| [**Git Cheat Sheet**](./git.md)                       | Version control with Git        | Commands, branching, merging, workflows, best practices                 |
+| [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices  |
+| [**Linux Commands Cheat Sheet**](./linux.md)          | Essential terminal commands     | File operations, process management, networking, system admin, SSH      |
+| [**Python Cheat Sheet**](./python.md)                 | Core language and scripting     | Syntax, data structures, functions, classes, libraries, best practices  |
+| [**Regex Cheat Sheet**](./regex.md)                   | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns     |
+| [**SQL Cheat Sheet**](./sql.md)                       | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions    |
+| [**TypeScript Cheat Sheet**](./typescript.md)         | Typed JavaScript superset       | Types, interfaces, generics, utility types, classes, tsconfig, patterns |
 
 ### Web Development References
 
