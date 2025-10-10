@@ -1,6 +1,7 @@
 # HTTP Status Codes Cheat Sheet
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [1xx Informational](#1xx-informational)
 - [2xx Success](#2xx-success)
@@ -19,6 +20,7 @@
 HTTP status codes are three-digit numbers returned by web servers to indicate the result of a client's request. They are grouped into five classes based on the first digit.
 
 ### Status Code Format
+
 ```
 HTTP/1.1 200 OK
 HTTP/1.1 404 Not Found
@@ -26,52 +28,61 @@ HTTP/1.1 500 Internal Server Error
 ```
 
 ### Quick Reference
-| Range | Category | Purpose |
-|-------|----------|---------|
-| 1xx | Informational | Request received, continuing process |
-| 2xx | Success | Request successfully received, understood, and accepted |
-| 3xx | Redirection | Further action needs to be taken to complete request |
-| 4xx | Client Error | Request contains bad syntax or cannot be fulfilled |
-| 5xx | Server Error | Server failed to fulfill valid request |
+
+| Range | Category      | Purpose                                                 |
+| ----- | ------------- | ------------------------------------------------------- |
+| 1xx   | Informational | Request received, continuing process                    |
+| 2xx   | Success       | Request successfully received, understood, and accepted |
+| 3xx   | Redirection   | Further action needs to be taken to complete request    |
+| 4xx   | Client Error  | Request contains bad syntax or cannot be fulfilled      |
+| 5xx   | Server Error  | Server failed to fulfill valid request                  |
 
 ## 1xx Informational
 
 ### 100 Continue
+
 ```http
 HTTP/1.1 100 Continue
 ```
+
 - **Purpose**: Server has received request headers and client should proceed with request body
 - **Use Case**: Large file uploads, form submissions
 - **Client Action**: Send request body
 - **Example**: Upload progress indication
 
 ### 101 Switching Protocols
+
 ```http
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
 ```
+
 - **Purpose**: Server is switching protocols as requested by client
 - **Use Case**: WebSocket upgrades, HTTP/2 upgrades
 - **Client Action**: Switch to new protocol
 - **Example**: WebSocket handshake completion
 
 ### 102 Processing (WebDAV)
+
 ```http
 HTTP/1.1 103 Early Hints
 Link: </style.css>; rel=preload; as=style
 ```
+
 - **Purpose**: Server has received and is processing request
 - **Use Case**: Long-running operations
 - **Client Action**: Wait for final response
 - **Example**: Complex database queries
 
 ### 103 Early Hints
+
 ```http
 HTTP/1.1 103 Early Hints
 Link: </style.css>; rel=preload; as=style
 Link: </script.js>; rel=preload; as=script
 ```
+
 - **Purpose**: Send preliminary response headers before final response
 - **Use Case**: Performance optimization, resource preloading
 - **Client Action**: Start preloading resources
@@ -80,6 +91,7 @@ Link: </script.js>; rel=preload; as=script
 ## 2xx Success
 
 ### 200 OK
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -89,12 +101,14 @@ Content-Type: application/json
   "data": { ... }
 }
 ```
+
 - **Purpose**: Request succeeded
 - **Use Case**: Successful GET, POST, PUT operations
 - **Response**: Contains requested resource or confirmation
 - **Example**: API data retrieval, form submission success
 
 ### 201 Created
+
 ```http
 HTTP/1.1 201 Created
 Location: /api/users/123
@@ -105,12 +119,14 @@ Content-Type: application/json
   "message": "User created successfully"
 }
 ```
+
 - **Purpose**: Request succeeded and new resource was created
 - **Use Case**: POST requests creating new resources
 - **Headers**: Often includes `Location` header with new resource URL
 - **Example**: User registration, article creation
 
 ### 202 Accepted
+
 ```http
 HTTP/1.1 202 Accepted
 Location: /api/jobs/456
@@ -121,21 +137,25 @@ Location: /api/jobs/456
   "estimatedTime": "5 minutes"
 }
 ```
+
 - **Purpose**: Request accepted for processing but not completed
 - **Use Case**: Asynchronous operations, batch processing
 - **Response**: Often includes job ID or status endpoint
 - **Example**: File processing, email sending, report generation
 
 ### 204 No Content
+
 ```http
 HTTP/1.1 204 No Content
 ```
+
 - **Purpose**: Request succeeded but no content to return
 - **Use Case**: DELETE operations, PUT updates
 - **Response**: Empty response body
 - **Example**: Resource deletion, profile updates
 
 ### 206 Partial Content
+
 ```http
 HTTP/1.1 206 Partial Content
 Content-Range: bytes 200-1023/2048
@@ -143,6 +163,7 @@ Content-Length: 824
 
 [partial file content]
 ```
+
 - **Purpose**: Server is delivering part of resource due to range request
 - **Use Case**: Video streaming, file downloads with resume capability
 - **Headers**: `Content-Range`, `Content-Length`
@@ -151,10 +172,12 @@ Content-Length: 824
 ## 3xx Redirection
 
 ### 301 Moved Permanently
+
 ```http
 HTTP/1.1 301 Moved Permanently
 Location: https://www.example.com/new-url
 ```
+
 - **Purpose**: Resource has permanently moved to new URL
 - **Use Case**: URL restructuring, domain changes
 - **SEO Impact**: Transfers search engine ranking to new URL
@@ -162,10 +185,12 @@ Location: https://www.example.com/new-url
 - **Example**: Site migration, URL cleanup
 
 ### 302 Found (Temporary Redirect)
+
 ```http
 HTTP/1.1 302 Found
 Location: /temporary-maintenance-page
 ```
+
 - **Purpose**: Resource temporarily moved to different URL
 - **Use Case**: Temporary maintenance, A/B testing
 - **SEO Impact**: Preserves original URL ranking
@@ -173,11 +198,13 @@ Location: /temporary-maintenance-page
 - **Example**: Maintenance pages, temporary promotions
 
 ### 304 Not Modified
+
 ```http
 HTTP/1.1 304 Not Modified
 ETag: "abc123"
 Cache-Control: max-age=3600
 ```
+
 - **Purpose**: Resource hasn't changed since last request
 - **Use Case**: Conditional requests with `If-Modified-Since` or `If-None-Match`
 - **Performance**: Saves bandwidth by not resending content
@@ -185,20 +212,24 @@ Cache-Control: max-age=3600
 - **Example**: Browser caching, API caching
 
 ### 307 Temporary Redirect
+
 ```http
 HTTP/1.1 307 Temporary Redirect
 Location: /api/v2/users
 ```
+
 - **Purpose**: Temporary redirect that preserves request method
 - **Use Case**: API versioning, temporary endpoints
 - **Difference from 302**: Guarantees method preservation (POST stays POST)
 - **Example**: API maintenance, load balancing
 
 ### 308 Permanent Redirect
+
 ```http
 HTTP/1.1 308 Permanent Redirect
 Location: https://api.example.com/v2/endpoint
 ```
+
 - **Purpose**: Permanent redirect that preserves request method
 - **Use Case**: API versioning, HTTPS enforcement
 - **Difference from 301**: Guarantees method preservation
@@ -207,6 +238,7 @@ Location: https://api.example.com/v2/endpoint
 ## 4xx Client Errors
 
 ### 400 Bad Request
+
 ```http
 HTTP/1.1 400 Bad Request
 Content-Type: application/json
@@ -216,12 +248,14 @@ Content-Type: application/json
   "details": "Unexpected token at line 3"
 }
 ```
+
 - **Purpose**: Server cannot process request due to client error
 - **Use Case**: Malformed JSON, invalid parameters, syntax errors
 - **Response**: Should include error details
 - **Example**: Invalid form data, malformed API requests
 
 ### 401 Unauthorized
+
 ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer realm="api"
@@ -231,12 +265,14 @@ WWW-Authenticate: Bearer realm="api"
   "message": "Please provide valid credentials"
 }
 ```
+
 - **Purpose**: Authentication is required and has failed or not provided
 - **Use Case**: Missing or invalid credentials
 - **Headers**: `WWW-Authenticate` header indicates auth method
 - **Example**: Missing API key, expired token, wrong password
 
 ### 403 Forbidden
+
 ```http
 HTTP/1.1 403 Forbidden
 
@@ -245,12 +281,14 @@ HTTP/1.1 403 Forbidden
   "message": "Insufficient permissions to access this resource"
 }
 ```
+
 - **Purpose**: Server understood request but refuses to authorize it
 - **Use Case**: Insufficient permissions, resource restrictions
 - **Difference from 401**: User is authenticated but not authorized
 - **Example**: Admin-only endpoints, private resources
 
 ### 404 Not Found
+
 ```http
 HTTP/1.1 404 Not Found
 
@@ -259,12 +297,14 @@ HTTP/1.1 404 Not Found
   "message": "User with ID 123 does not exist"
 }
 ```
+
 - **Purpose**: Server cannot find requested resource
 - **Use Case**: Broken links, deleted resources, wrong URLs
 - **Response**: Often includes suggestions or search functionality
 - **Example**: Deleted blog post, wrong API endpoint, typos in URL
 
 ### 405 Method Not Allowed
+
 ```http
 HTTP/1.1 405 Method Not Allowed
 Allow: GET, POST, PUT
@@ -274,12 +314,14 @@ Allow: GET, POST, PUT
   "allowed": ["GET", "POST", "PUT"]
 }
 ```
+
 - **Purpose**: Request method not supported for requested resource
 - **Use Case**: DELETE on read-only resource, POST to static endpoint
 - **Headers**: `Allow` header lists supported methods
 - **Example**: POST to GET-only endpoint
 
 ### 409 Conflict
+
 ```http
 HTTP/1.1 409 Conflict
 
@@ -289,12 +331,14 @@ HTTP/1.1 409 Conflict
   "conflictingField": "email"
 }
 ```
+
 - **Purpose**: Request conflicts with current state of server
 - **Use Case**: Duplicate entries, concurrent modifications, version conflicts
 - **Response**: Should explain the conflict
 - **Example**: Duplicate email registration, optimistic locking conflicts
 
 ### 410 Gone
+
 ```http
 HTTP/1.1 410 Gone
 
@@ -303,12 +347,14 @@ HTTP/1.1 410 Gone
   "message": "This API version has been discontinued"
 }
 ```
+
 - **Purpose**: Resource was available previously but is permanently gone
 - **Use Case**: Deprecated API versions, deleted content with no redirect
 - **Difference from 404**: Indicates resource existed before
 - **Example**: Deprecated API endpoints, expired promotional content
 
 ### 422 Unprocessable Entity
+
 ```http
 HTTP/1.1 422 Unprocessable Entity
 
@@ -326,12 +372,14 @@ HTTP/1.1 422 Unprocessable Entity
   ]
 }
 ```
+
 - **Purpose**: Request syntactically correct but semantically invalid
 - **Use Case**: Validation failures, business rule violations
 - **Response**: Detailed validation errors
 - **Example**: Form validation errors, data constraint violations
 
 ### 429 Too Many Requests
+
 ```http
 HTTP/1.1 429 Too Many Requests
 Retry-After: 60
@@ -344,6 +392,7 @@ X-RateLimit-Reset: 1640995200
   "retryAfter": 60
 }
 ```
+
 - **Purpose**: Client has sent too many requests in given time frame
 - **Use Case**: API rate limiting, abuse prevention
 - **Headers**: `Retry-After`, `X-RateLimit-*` headers
@@ -352,6 +401,7 @@ X-RateLimit-Reset: 1640995200
 ## 5xx Server Errors
 
 ### 500 Internal Server Error
+
 ```http
 HTTP/1.1 500 Internal Server Error
 
@@ -361,12 +411,14 @@ HTTP/1.1 500 Internal Server Error
   "requestId": "req_123456789"
 }
 ```
+
 - **Purpose**: Generic server error when no specific error is appropriate
 - **Use Case**: Unhandled exceptions, server crashes, database errors
 - **Response**: Should not expose internal details in production
 - **Example**: Database connection failures, unhandled exceptions
 
 ### 501 Not Implemented
+
 ```http
 HTTP/1.1 501 Not Implemented
 
@@ -375,11 +427,13 @@ HTTP/1.1 501 Not Implemented
   "message": "PATCH method not supported"
 }
 ```
+
 - **Purpose**: Server doesn't support functionality required to fulfill request
 - **Use Case**: Unimplemented HTTP methods, missing features
 - **Example**: PATCH method not implemented, unsupported API features
 
 ### 502 Bad Gateway
+
 ```http
 HTTP/1.1 502 Bad Gateway
 
@@ -388,11 +442,13 @@ HTTP/1.1 502 Bad Gateway
   "message": "Upstream server returned invalid response"
 }
 ```
+
 - **Purpose**: Server acting as gateway received invalid response from upstream
 - **Use Case**: Proxy/gateway errors, microservice communication failures
 - **Example**: Load balancer can't reach backend, API gateway errors
 
 ### 503 Service Unavailable
+
 ```http
 HTTP/1.1 503 Service Unavailable
 Retry-After: 300
@@ -403,12 +459,14 @@ Retry-After: 300
   "retryAfter": 300
 }
 ```
+
 - **Purpose**: Server temporarily unable to handle request
 - **Use Case**: Maintenance mode, server overload, temporary outages
 - **Headers**: `Retry-After` suggests when to retry
 - **Example**: Scheduled maintenance, traffic spikes, deployment
 
 ### 504 Gateway Timeout
+
 ```http
 HTTP/1.1 504 Gateway Timeout
 
@@ -417,6 +475,7 @@ HTTP/1.1 504 Gateway Timeout
   "message": "Upstream server did not respond in time"
 }
 ```
+
 - **Purpose**: Server acting as gateway didn't receive timely response from upstream
 - **Use Case**: Slow backend services, network timeouts
 - **Example**: Database query timeout, slow API responses
@@ -424,6 +483,7 @@ HTTP/1.1 504 Gateway Timeout
 ## Common Status Code Groups
 
 ### Authentication & Authorization
+
 ```http
 401 Unauthorized    # Missing or invalid credentials
 403 Forbidden      # Authenticated but not authorized
@@ -431,6 +491,7 @@ HTTP/1.1 504 Gateway Timeout
 ```
 
 ### Content Negotiation
+
 ```http
 300 Multiple Choices
 406 Not Acceptable     # Cannot produce content matching Accept headers
@@ -438,12 +499,14 @@ HTTP/1.1 504 Gateway Timeout
 ```
 
 ### Caching Related
+
 ```http
 304 Not Modified      # Resource unchanged
 412 Precondition Failed  # If-Match, If-Unmodified-Since failed
 ```
 
 ### Rate Limiting & Abuse
+
 ```http
 429 Too Many Requests
 420 Enhance Your Calm (Twitter)
@@ -452,6 +515,7 @@ HTTP/1.1 504 Gateway Timeout
 ## RESTful API Usage
 
 ### Resource Creation
+
 ```http
 POST /api/users
 201 Created           # User successfully created
@@ -461,6 +525,7 @@ POST /api/users
 ```
 
 ### Resource Retrieval
+
 ```http
 GET /api/users/123
 200 OK               # User found and returned
@@ -469,6 +534,7 @@ GET /api/users/123
 ```
 
 ### Resource Updates
+
 ```http
 PUT /api/users/123
 200 OK               # Update successful, return updated resource
@@ -479,6 +545,7 @@ PUT /api/users/123
 ```
 
 ### Resource Deletion
+
 ```http
 DELETE /api/users/123
 204 No Content       # Deletion successful
@@ -487,6 +554,7 @@ DELETE /api/users/123
 ```
 
 ### Collection Operations
+
 ```http
 GET /api/users
 200 OK               # List of users
@@ -500,12 +568,14 @@ GET /api/users?page=999
 ## Browser Behavior
 
 ### Automatic Redirects
+
 ```http
 301, 302, 307, 308   # Browsers automatically follow
 3xx with Location header
 ```
 
 ### Caching Behavior
+
 ```http
 200, 301, 410        # Cacheable by default
 304                  # Validates cache freshness
@@ -514,6 +584,7 @@ Cache-Control: no-store  # Never cache
 ```
 
 ### Error Page Display
+
 ```http
 4xx, 5xx            # Browsers may show error pages
 404                 # Custom 404 pages common
@@ -521,6 +592,7 @@ Cache-Control: no-store  # Never cache
 ```
 
 ### Method Handling
+
 ```http
 GET, HEAD           # Safe methods, cacheable
 POST, PUT, DELETE   # May trigger confirmation dialogs
@@ -530,6 +602,7 @@ PATCH               # Not supported by all browsers
 ## Caching Implications
 
 ### Cacheable Status Codes
+
 ```http
 200 OK              # Cache with proper headers
 301 Moved Permanently  # Cache redirect permanently
@@ -538,6 +611,7 @@ PATCH               # Not supported by all browsers
 ```
 
 ### Cache Headers
+
 ```http
 Cache-Control: max-age=3600        # Cache for 1 hour
 Cache-Control: no-cache           # Always validate
@@ -547,6 +621,7 @@ Expires: Thu, 01 Dec 1994         # Absolute expiry
 ```
 
 ### CDN Considerations
+
 ```http
 200, 301, 404      # Often cached by CDNs
 Cache-Control: public    # Explicitly cacheable
@@ -557,6 +632,7 @@ Vary: Accept-Encoding    # Cache varies by header
 ## Best Practices
 
 ### Choosing Appropriate Status Codes
+
 ```http
 # Resource Creation
 POST /users
@@ -577,6 +653,7 @@ PUT /users/123
 ```
 
 ### Error Response Bodies
+
 ```javascript
 // Good: Detailed error information
 {
@@ -593,13 +670,14 @@ PUT /users/123
   "requestId": "req_abc123"
 }
 
-// Bad: Generic or no error information  
+// Bad: Generic or no error information
 {
   "error": "Error occurred"
 }
 ```
 
 ### Status Code Consistency
+
 ```javascript
 // Consistent pattern across your API
 app.post('/users', (req, res) => {
@@ -615,6 +693,7 @@ app.post('/users', (req, res) => {
 ```
 
 ### Documentation Standards
+
 ```yaml
 # OpenAPI specification example
 paths:
@@ -636,6 +715,7 @@ paths:
 ### Common Issues
 
 #### Wrong Status Code Usage
+
 ```http
 # Wrong: 200 for not found
 GET /api/users/999
@@ -649,6 +729,7 @@ GET /api/users/999
 ```
 
 #### Missing Location Headers
+
 ```http
 # Wrong: 201 without Location
 POST /api/users
@@ -656,17 +737,18 @@ POST /api/users
 { "id": 123, "name": "John" }
 
 # Correct: 201 with Location
-POST /api/users  
+POST /api/users
 201 Created
 Location: /api/users/123
 { "id": 123, "name": "John" }
 ```
 
 #### Inconsistent Error Format
+
 ```http
 # Inconsistent error responses
 400 Bad Request: { "message": "Invalid input" }
-404 Not Found: { "error": "Not found" }  
+404 Not Found: { "error": "Not found" }
 422 Validation: { "errors": [...] }
 
 # Consistent error format
@@ -678,17 +760,18 @@ Location: /api/users/123
 ### Debugging Status Codes
 
 #### Browser Developer Tools
+
 ```javascript
 // Check response status in browser console
-fetch('/api/users')
-  .then(response => {
-    console.log('Status:', response.status);
-    console.log('Status Text:', response.statusText);
-    console.log('OK:', response.ok); // true for 2xx
-  });
+fetch("/api/users").then((response) => {
+  console.log("Status:", response.status);
+  console.log("Status Text:", response.statusText);
+  console.log("OK:", response.ok); // true for 2xx
+});
 ```
 
 #### Curl Commands
+
 ```bash
 # Check status code with curl
 curl -I http://example.com/api/users
@@ -702,11 +785,12 @@ curl -i http://example.com/api/users
 ```
 
 #### Server-side Logging
+
 ```javascript
 // Express.js middleware to log status codes
 app.use((req, res, next) => {
   const originalSend = res.send;
-  res.send = function(data) {
+  res.send = function (data) {
     console.log(`${req.method} ${req.path} - ${res.statusCode}`);
     originalSend.call(this, data);
   };
@@ -715,23 +799,24 @@ app.use((req, res, next) => {
 ```
 
 ### Status Code Testing
+
 ```javascript
 // Jest test examples
-describe('API Status Codes', () => {
-  test('returns 200 for existing user', async () => {
-    const response = await request(app).get('/api/users/1');
+describe("API Status Codes", () => {
+  test("returns 200 for existing user", async () => {
+    const response = await request(app).get("/api/users/1");
     expect(response.status).toBe(200);
   });
 
-  test('returns 404 for non-existing user', async () => {
-    const response = await request(app).get('/api/users/999');
+  test("returns 404 for non-existing user", async () => {
+    const response = await request(app).get("/api/users/999");
     expect(response.status).toBe(404);
   });
 
-  test('returns 201 when creating user', async () => {
+  test("returns 201 when creating user", async () => {
     const response = await request(app)
-      .post('/api/users')
-      .send({ name: 'John', email: 'john@example.com' });
+      .post("/api/users")
+      .send({ name: "John", email: "john@example.com" });
     expect(response.status).toBe(201);
     expect(response.headers.location).toMatch(/\/api\/users\/\d+/);
   });
@@ -739,17 +824,18 @@ describe('API Status Codes', () => {
 ```
 
 ### Performance Monitoring
+
 ```javascript
 // Monitor status code distribution
 const statusCodes = {
-  '2xx': 0,
-  '3xx': 0, 
-  '4xx': 0,
-  '5xx': 0
+  "2xx": 0,
+  "3xx": 0,
+  "4xx": 0,
+  "5xx": 0,
 };
 
 app.use((req, res, next) => {
-  res.on('finish', () => {
+  res.on("finish", () => {
     const statusClass = `${Math.floor(res.statusCode / 100)}xx`;
     statusCodes[statusClass]++;
   });
@@ -758,10 +844,19 @@ app.use((req, res, next) => {
 
 // Alert on high error rates
 setInterval(() => {
-  const errorRate = (statusCodes['4xx'] + statusCodes['5xx']) / 
-                   Object.values(statusCodes).reduce((a, b) => a + b, 0);
+  const errorRate =
+    (statusCodes["4xx"] + statusCodes["5xx"]) /
+    Object.values(statusCodes).reduce((a, b) => a + b, 0);
   if (errorRate > 0.1) {
-    console.warn('High error rate detected:', errorRate);
+    console.warn("High error rate detected:", errorRate);
   }
 }, 60000); // Check every minute
 ```
+
+## Tools & References
+
+### Essential Resources
+
+- **MDN HTTP Status Codes**: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status - Complete reference
+- **IANA Status Code Registry**: https://www.iana.org/assignments/http-status-codes/ - Official registry
+- **RFC 9110**: https://www.rfc-editor.org/rfc/rfc9110.html - HTTP Semantics specification

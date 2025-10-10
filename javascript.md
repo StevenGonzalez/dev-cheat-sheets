@@ -1,6 +1,7 @@
 # JavaScript/Node.js Cheat Sheet
 
 ## Table of Contents
+
 - [JavaScript Basics](#javascript-basics)
 - [Variables & Data Types](#variables--data-types)
 - [Functions](#functions)
@@ -21,6 +22,7 @@
 ## JavaScript Basics
 
 ### Running JavaScript
+
 ```javascript
 // In browser console
 console.log('Hello World');
@@ -36,6 +38,7 @@ node script.js
 ```
 
 ### Comments
+
 ```javascript
 // Single line comment
 
@@ -54,23 +57,27 @@ Can span multiple lines
 ## Variables & Data Types
 
 ### Variable Declarations
+
 ```javascript
 // Modern ES6+ (recommended)
-let mutableVariable = 'can be changed';
-const immutableVariable = 'cannot be changed';
+let mutableVariable = "can be changed";
+const immutableVariable = "cannot be changed";
 
 // Older syntax (avoid in modern code)
-var oldStyleVariable = 'function-scoped';
+var oldStyleVariable = "function-scoped";
 
 // Multiple declarations
-let a = 1, b = 2, c = 3;
+let a = 1,
+  b = 2,
+  c = 3;
 const { name, age } = person; // Destructuring
 ```
 
 ### Primitive Data Types
+
 ```javascript
 // String
-const name = 'John';
+const name = "John";
 const template = `Hello ${name}!`; // Template literal
 
 // Number
@@ -87,33 +94,35 @@ let undefinedVar;
 const nullVar = null;
 
 // Symbol (ES6)
-const uniqueId = Symbol('id');
+const uniqueId = Symbol("id");
 
 // BigInt (ES2020)
 const bigNumber = 123456789012345678901234567890n;
 ```
 
 ### Type Checking
+
 ```javascript
 // typeof operator
-typeof 'hello';        // 'string'
-typeof 42;             // 'number'
-typeof true;           // 'boolean'
-typeof undefined;      // 'undefined'
-typeof null;           // 'object' (known quirk)
-typeof {};             // 'object'
-typeof [];             // 'object'
-typeof function(){};   // 'function'
+typeof "hello"; // 'string'
+typeof 42; // 'number'
+typeof true; // 'boolean'
+typeof undefined; // 'undefined'
+typeof null; // 'object' (known quirk)
+typeof {}; // 'object'
+typeof []; // 'object'
+typeof function () {}; // 'function'
 
 // Better type checking
-Array.isArray([]);           // true
-Number.isInteger(42);        // true
+Array.isArray([]); // true
+Number.isInteger(42); // true
 Object.prototype.toString.call(null); // '[object Null]'
 ```
 
 ## Functions
 
 ### Function Declarations
+
 ```javascript
 // Function declaration (hoisted)
 function greet(name) {
@@ -121,26 +130,27 @@ function greet(name) {
 }
 
 // Function expression
-const greet = function(name) {
+const greet = function (name) {
   return `Hello, ${name}!`;
 };
 
 // Arrow function (ES6)
 const greet = (name) => `Hello, ${name}!`;
-const greet = name => `Hello, ${name}!`; // Single parameter
-const add = (a, b) => a + b;             // Single expression
+const greet = (name) => `Hello, ${name}!`; // Single parameter
+const add = (a, b) => a + b; // Single expression
 
 // Multi-line arrow function
 const processData = (data) => {
-  const processed = data.map(item => item * 2);
-  return processed.filter(item => item > 10);
+  const processed = data.map((item) => item * 2);
+  return processed.filter((item) => item > 10);
 };
 ```
 
 ### Advanced Function Features
+
 ```javascript
 // Default parameters
-function greet(name = 'World') {
+function greet(name = "World") {
   return `Hello, ${name}!`;
 }
 
@@ -160,124 +170,134 @@ const double = multiplyBy(2);
 console.log(double(5)); // 10
 
 // Immediately Invoked Function Expression (IIFE)
-(function() {
-  console.log('This runs immediately');
+(function () {
+  console.log("This runs immediately");
 })();
 ```
 
 ## Arrays & Objects
 
 ### Array Methods
+
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const fruits = ['apple', 'banana', 'orange'];
+const fruits = ["apple", "banana", "orange"];
 
 // Adding/Removing elements
-fruits.push('grape');           // Add to end
-fruits.unshift('kiwi');         // Add to beginning  
-fruits.pop();                   // Remove from end
-fruits.shift();                 // Remove from beginning
-fruits.splice(1, 2, 'mango');   // Remove/insert at index
+fruits.push("grape"); // Add to end
+fruits.unshift("kiwi"); // Add to beginning
+fruits.pop(); // Remove from end
+fruits.shift(); // Remove from beginning
+fruits.splice(1, 2, "mango"); // Remove/insert at index
 
 // Iteration methods
-numbers.forEach(num => console.log(num));
-const doubled = numbers.map(num => num * 2);
-const evens = numbers.filter(num => num % 2 === 0);
+numbers.forEach((num) => console.log(num));
+const doubled = numbers.map((num) => num * 2);
+const evens = numbers.filter((num) => num % 2 === 0);
 const sum = numbers.reduce((total, num) => total + num, 0);
 
 // Search methods
-fruits.includes('apple');       // true/false
-fruits.indexOf('banana');       // index or -1
-fruits.find(fruit => fruit.startsWith('a')); // first match
-fruits.findIndex(fruit => fruit === 'orange'); // index of match
+fruits.includes("apple"); // true/false
+fruits.indexOf("banana"); // index or -1
+fruits.find((fruit) => fruit.startsWith("a")); // first match
+fruits.findIndex((fruit) => fruit === "orange"); // index of match
 
 // Array manipulation
 const combined = [...fruits, ...numbers]; // Spread operator
-const sliced = fruits.slice(1, 3);        // Extract portion
+const sliced = fruits.slice(1, 3); // Extract portion
 ```
 
 ### Object Operations
+
 ```javascript
 // Object creation
 const person = {
-  name: 'John',
+  name: "John",
   age: 30,
-  city: 'New York'
+  city: "New York",
 };
 
 // Property access
-console.log(person.name);     // Dot notation
-console.log(person['name']);  // Bracket notation
-const prop = 'age';
-console.log(person[prop]);    // Dynamic property
+console.log(person.name); // Dot notation
+console.log(person["name"]); // Bracket notation
+const prop = "age";
+console.log(person[prop]); // Dynamic property
 
 // Object methods
-Object.keys(person);          // ['name', 'age', 'city']
-Object.values(person);        // ['John', 30, 'New York']  
-Object.entries(person);       // [['name', 'John'], ...]
+Object.keys(person); // ['name', 'age', 'city']
+Object.values(person); // ['John', 30, 'New York']
+Object.entries(person); // [['name', 'John'], ...]
 
 // Object manipulation
 const updatedPerson = { ...person, age: 31 }; // Spread operator
-const { name, ...rest } = person;             // Destructuring
+const { name, ...rest } = person; // Destructuring
 
 // Object.assign for merging
-const merged = Object.assign({}, person, { country: 'USA' });
+const merged = Object.assign({}, person, { country: "USA" });
 ```
 
 ### Destructuring
+
 ```javascript
 // Array destructuring
 const [first, second, ...rest] = [1, 2, 3, 4, 5];
 const [a, , c] = [1, 2, 3]; // Skip elements
 
-// Object destructuring  
+// Object destructuring
 const { name, age } = person;
 const { name: fullName, age: years } = person; // Rename
-const { country = 'USA' } = person;            // Default value
+const { country = "USA" } = person; // Default value
 
 // Nested destructuring
 const user = {
   id: 1,
   profile: {
-    name: 'John',
-    contact: { email: 'john@example.com' }
-  }
+    name: "John",
+    contact: { email: "john@example.com" },
+  },
 };
-const { profile: { name, contact: { email } } } = user;
+const {
+  profile: {
+    name,
+    contact: { email },
+  },
+} = user;
 ```
 
 ## Control Flow
 
 ### Conditional Statements
+
 ```javascript
 // if/else
 if (age >= 18) {
-  console.log('Adult');
+  console.log("Adult");
 } else if (age >= 13) {
-  console.log('Teenager');
+  console.log("Teenager");
 } else {
-  console.log('Child');
+  console.log("Child");
 }
 
 // Ternary operator
-const status = age >= 18 ? 'Adult' : 'Minor';
+const status = age >= 18 ? "Adult" : "Minor";
 
 // Switch statement
 switch (day) {
-  case 'monday':
-  case 'tuesday':
-    console.log('Weekday');
+  case "monday":
+  case "tuesday":
+    console.log("Weekday");
     break;
-  case 'saturday':
-  case 'sunday':
-    console.log('Weekend');
+  case "saturday":
+  case "sunday":
+    console.log("Weekend");
     break;
   default:
-    console.log('Unknown day');
+    console.log("Unknown day");
 }
 ```
 
 ### Loops
+
 ```javascript
 // for loop
 for (let i = 0; i < 5; i++) {
@@ -303,7 +323,7 @@ while (i < 5) {
 
 // do...while loop
 do {
-  console.log('Runs at least once');
+  console.log("Runs at least once");
 } while (false);
 
 // forEach (arrays)
@@ -315,48 +335,53 @@ array.forEach((item, index) => {
 ## Promises & Async/Await
 
 ### Promises
+
 ```javascript
 // Creating a Promise
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     const success = Math.random() > 0.5;
     if (success) {
-      resolve('Operation successful');
+      resolve("Operation successful");
     } else {
-      reject(new Error('Operation failed'));
+      reject(new Error("Operation failed"));
     }
   }, 1000);
 });
 
 // Using Promises
 myPromise
-  .then(result => console.log(result))
-  .catch(error => console.error(error))
-  .finally(() => console.log('Always runs'));
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error))
+  .finally(() => console.log("Always runs"));
 
 // Promise.all (all must succeed)
-Promise.all([promise1, promise2, promise3])
-  .then(results => console.log(results));
+Promise.all([promise1, promise2, promise3]).then((results) =>
+  console.log(results)
+);
 
 // Promise.allSettled (wait for all, regardless of outcome)
-Promise.allSettled([promise1, promise2, promise3])
-  .then(results => console.log(results));
+Promise.allSettled([promise1, promise2, promise3]).then((results) =>
+  console.log(results)
+);
 
 // Promise.race (first to complete)
-Promise.race([promise1, promise2, promise3])
-  .then(result => console.log(result));
+Promise.race([promise1, promise2, promise3]).then((result) =>
+  console.log(result)
+);
 ```
 
 ### Async/Await
+
 ```javascript
 // Async function
 async function fetchData() {
   try {
-    const response = await fetch('https://api.example.com/data');
+    const response = await fetch("https://api.example.com/data");
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error("Error fetching data:", error);
     throw error;
   }
 }
@@ -367,7 +392,7 @@ async function main() {
     const data = await fetchData();
     console.log(data);
   } catch (error) {
-    console.error('Main error:', error);
+    console.error("Main error:", error);
   }
 }
 
@@ -381,8 +406,8 @@ const fetchUserData = async (userId) => {
 async function fetchMultipleData() {
   const [users, posts, comments] = await Promise.all([
     fetchUsers(),
-    fetchPosts(), 
-    fetchComments()
+    fetchPosts(),
+    fetchComments(),
   ]);
   return { users, posts, comments };
 }
@@ -391,8 +416,9 @@ async function fetchMultipleData() {
 ## ES6+ Features
 
 ### Template Literals
+
 ```javascript
-const name = 'John';
+const name = "John";
 const age = 30;
 
 // Multi-line strings
@@ -405,14 +431,15 @@ const message = `
 // Tagged template literals
 function highlight(strings, ...values) {
   return strings.reduce((result, string, i) => {
-    return result + string + (values[i] ? `<mark>${values[i]}</mark>` : '');
-  }, '');
+    return result + string + (values[i] ? `<mark>${values[i]}</mark>` : "");
+  }, "");
 }
 
 const highlighted = highlight`Hello ${name}, you are ${age} years old`;
 ```
 
 ### Classes
+
 ```javascript
 // Class declaration
 class Person {
@@ -438,7 +465,7 @@ class Person {
 
   // Static method
   static createAnonymous() {
-    return new Person('Anonymous', 0);
+    return new Person("Anonymous", 0);
   }
 }
 
@@ -456,65 +483,72 @@ class Student extends Person {
 ```
 
 ### Modules
+
 ```javascript
 // export.js
 export const PI = 3.14159;
-export function square(x) { return x * x; }
-export default class Calculator { /* ... */ }
+export function square(x) {
+  return x * x;
+}
+export default class Calculator {
+  /* ... */
+}
 
 // import.js
-import Calculator, { PI, square } from './export.js';
-import * as math from './math.js';
-import { square as sq } from './export.js'; // Rename import
+import Calculator, { PI, square } from "./export.js";
+import * as math from "./math.js";
+import { square as sq } from "./export.js"; // Rename import
 
 // Dynamic imports
 async function loadModule() {
-  const module = await import('./dynamic-module.js');
+  const module = await import("./dynamic-module.js");
   module.doSomething();
 }
 ```
 
 ### Other ES6+ Features
+
 ```javascript
 // Set
 const uniqueNumbers = new Set([1, 2, 3, 3, 4]);
 uniqueNumbers.add(5);
 uniqueNumbers.has(3); // true
 
-// Map  
+// Map
 const userRoles = new Map();
-userRoles.set('john', 'admin');
-userRoles.set('jane', 'user');
+userRoles.set("john", "admin");
+userRoles.set("jane", "user");
 
 // WeakMap and WeakSet (garbage collected when refs are gone)
 const weakMap = new WeakMap();
 const weakSet = new WeakSet();
 
 // Optional Chaining (ES2020)
-const user = { profile: { name: 'John' } };
-console.log(user.profile?.name);        // 'John'
-console.log(user.profile?.age);         // undefined
-console.log(user.nonexistent?.name);    // undefined
+const user = { profile: { name: "John" } };
+console.log(user.profile?.name); // 'John'
+console.log(user.profile?.age); // undefined
+console.log(user.nonexistent?.name); // undefined
 
 // Nullish Coalescing (ES2020)
-const defaultName = user.name ?? 'Anonymous';
+const defaultName = user.name ?? "Anonymous";
 const config = { timeout: user.timeout ?? 5000 };
 ```
 
 ## DOM Manipulation
 
 ### Selecting Elements
+
 ```javascript
 // Single element selectors
-const element = document.getElementById('myId');
-const element = document.querySelector('.class-name');
-const element = document.querySelector('#myId');
+const element = document.getElementById("myId");
+const element = document.querySelector(".class-name");
+const element = document.querySelector("#myId");
 const element = document.querySelector('div[data-id="123"]');
 
-// Multiple element selectors  
-const elements = document.getElementsByClassName('class-name');
-const elements = document.getElementsByTagName('div');
-const elements = document.querySelectorAll('.class-name');
+// Multiple element selectors
+const elements = document.getElementsByClassName("class-name");
+const elements = document.getElementsByTagName("div");
+const elements = document.querySelectorAll(".class-name");
 
 // Traversal
 const parent = element.parentNode;
@@ -524,81 +558,84 @@ const previous = element.previousElementSibling;
 ```
 
 ### Modifying Elements
+
 ```javascript
 // Content manipulation
-element.textContent = 'New text content';
-element.innerHTML = '<strong>New HTML content</strong>';
+element.textContent = "New text content";
+element.innerHTML = "<strong>New HTML content</strong>";
 
 // Attribute manipulation
-element.getAttribute('data-id');
-element.setAttribute('data-id', '123');
-element.removeAttribute('data-id');
-element.hasAttribute('data-id');
+element.getAttribute("data-id");
+element.setAttribute("data-id", "123");
+element.removeAttribute("data-id");
+element.hasAttribute("data-id");
 
 // Class manipulation
-element.classList.add('new-class');
-element.classList.remove('old-class');
-element.classList.toggle('active');
-element.classList.contains('active');
+element.classList.add("new-class");
+element.classList.remove("old-class");
+element.classList.toggle("active");
+element.classList.contains("active");
 
 // Style manipulation
-element.style.color = 'red';
-element.style.backgroundColor = 'blue';
-element.style.cssText = 'color: red; background: blue;';
+element.style.color = "red";
+element.style.backgroundColor = "blue";
+element.style.cssText = "color: red; background: blue;";
 
 // Creating and inserting elements
-const newElement = document.createElement('div');
-newElement.textContent = 'New element';
+const newElement = document.createElement("div");
+newElement.textContent = "New element";
 parent.appendChild(newElement);
 parent.insertBefore(newElement, referenceElement);
 ```
 
 ### Event Handling
+
 ```javascript
 // Adding event listeners
-element.addEventListener('click', function(event) {
-  console.log('Element clicked');
+element.addEventListener("click", function (event) {
+  console.log("Element clicked");
   event.preventDefault(); // Prevent default behavior
   event.stopPropagation(); // Stop event bubbling
 });
 
 // Arrow function event listener
-element.addEventListener('click', (event) => {
-  console.log('Clicked:', event.target);
+element.addEventListener("click", (event) => {
+  console.log("Clicked:", event.target);
 });
 
 // Event delegation (for dynamic content)
-document.addEventListener('click', function(event) {
-  if (event.target.matches('.button')) {
-    console.log('Button clicked');
+document.addEventListener("click", function (event) {
+  if (event.target.matches(".button")) {
+    console.log("Button clicked");
   }
 });
 
 // Removing event listeners
 function handleClick(event) {
-  console.log('Clicked');
+  console.log("Clicked");
 }
-element.addEventListener('click', handleClick);
-element.removeEventListener('click', handleClick);
+element.addEventListener("click", handleClick);
+element.removeEventListener("click", handleClick);
 
 // Common events
-element.addEventListener('load', handler);
-element.addEventListener('DOMContentLoaded', handler);
-element.addEventListener('resize', handler);
-element.addEventListener('scroll', handler);
-element.addEventListener('keydown', handler);
-element.addEventListener('submit', handler);
+element.addEventListener("load", handler);
+element.addEventListener("DOMContentLoaded", handler);
+element.addEventListener("resize", handler);
+element.addEventListener("scroll", handler);
+element.addEventListener("keydown", handler);
+element.addEventListener("submit", handler);
 ```
 
 ## Node.js Basics
 
 ### Getting Started
+
 ```bash
 # Check Node.js version
 node --version
 node -v
 
-# Check npm version  
+# Check npm version
 npm --version
 
 # Run JavaScript file
@@ -612,26 +649,27 @@ node --inspect app.js
 ```
 
 ### Core Modules
+
 ```javascript
 // File System
-const fs = require('fs');
-const fsPromises = require('fs').promises;
+const fs = require("fs");
+const fsPromises = require("fs").promises;
 
 // Path utilities
-const path = require('path');
+const path = require("path");
 
 // HTTP
-const http = require('http');
-const https = require('https');
+const http = require("http");
+const https = require("https");
 
 // URL utilities
-const url = require('url');
+const url = require("url");
 
-// Query string utilities  
-const querystring = require('querystring');
+// Query string utilities
+const querystring = require("querystring");
 
 // Operating System
-const os = require('os');
+const os = require("os");
 
 // Process
 // process is a global object
@@ -639,16 +677,17 @@ console.log(process.env.NODE_ENV);
 console.log(process.argv);
 
 // Events
-const EventEmitter = require('events');
+const EventEmitter = require("events");
 ```
 
 ### Module System
+
 ```javascript
 // CommonJS (traditional Node.js)
 // exporting
 module.exports = {
   add: (a, b) => a + b,
-  subtract: (a, b) => a - b
+  subtract: (a, b) => a - b,
 };
 
 // Or
@@ -656,22 +695,25 @@ exports.add = (a, b) => a + b;
 exports.subtract = (a, b) => a - b;
 
 // importing
-const { add, subtract } = require('./math');
-const math = require('./math');
+const { add, subtract } = require("./math");
+const math = require("./math");
 
 // ES Modules (modern, with .mjs or "type": "module" in package.json)
 // exporting
 export const add = (a, b) => a + b;
-export default class Calculator { /* ... */ }
+export default class Calculator {
+  /* ... */
+}
 
-// importing  
-import { add } from './math.js';
-import Calculator from './calculator.js';
+// importing
+import { add } from "./math.js";
+import Calculator from "./calculator.js";
 ```
 
 ## NPM & Package Management
 
 ### Package.json
+
 ```json
 {
   "name": "my-app",
@@ -699,6 +741,7 @@ import Calculator from './calculator.js';
 ```
 
 ### NPM Commands
+
 ```bash
 # Initialize new project
 npm init
@@ -707,7 +750,7 @@ npm init -y  # Skip questions
 # Install packages
 npm install express              # Install and add to dependencies
 npm install --save express       # Same as above
-npm install --save-dev jest      # Install as dev dependency  
+npm install --save-dev jest      # Install as dev dependency
 npm install -g nodemon          # Install globally
 npm install                     # Install all dependencies from package.json
 
@@ -744,6 +787,7 @@ npm info express               # Show package information
 ```
 
 ### Package-lock.json
+
 ```bash
 # Ensure exact versions are installed
 npm ci                          # Clean install from lock file
@@ -753,109 +797,114 @@ npm install --frozen-lockfile   # Don't update lock file
 ## File System Operations
 
 ### Reading Files
+
 ```javascript
-const fs = require('fs');
-const fsPromises = require('fs').promises;
-const path = require('path');
+const fs = require("fs");
+const fsPromises = require("fs").promises;
+const path = require("path");
 
 // Synchronous (blocking)
 try {
-  const data = fs.readFileSync('file.txt', 'utf8');
+  const data = fs.readFileSync("file.txt", "utf8");
   console.log(data);
 } catch (error) {
-  console.error('Error reading file:', error);
+  console.error("Error reading file:", error);
 }
 
 // Asynchronous with callbacks
-fs.readFile('file.txt', 'utf8', (error, data) => {
+fs.readFile("file.txt", "utf8", (error, data) => {
   if (error) {
-    console.error('Error reading file:', error);
+    console.error("Error reading file:", error);
     return;
   }
   console.log(data);
 });
 
 // Asynchronous with Promises
-fsPromises.readFile('file.txt', 'utf8')
-  .then(data => console.log(data))
-  .catch(error => console.error('Error reading file:', error));
+fsPromises
+  .readFile("file.txt", "utf8")
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error reading file:", error));
 
 // Asynchronous with async/await
 async function readFileAsync() {
   try {
-    const data = await fsPromises.readFile('file.txt', 'utf8');
+    const data = await fsPromises.readFile("file.txt", "utf8");
     console.log(data);
   } catch (error) {
-    console.error('Error reading file:', error);
+    console.error("Error reading file:", error);
   }
 }
 ```
 
 ### Writing Files
+
 ```javascript
 // Write file (overwrites existing)
-fs.writeFileSync('output.txt', 'Hello World');
+fs.writeFileSync("output.txt", "Hello World");
 
 // Async write
-fs.writeFile('output.txt', 'Hello World', 'utf8', (error) => {
+fs.writeFile("output.txt", "Hello World", "utf8", (error) => {
   if (error) {
-    console.error('Error writing file:', error);
+    console.error("Error writing file:", error);
   } else {
-    console.log('File written successfully');
+    console.log("File written successfully");
   }
 });
 
 // Promise-based write
-await fsPromises.writeFile('output.txt', 'Hello World', 'utf8');
+await fsPromises.writeFile("output.txt", "Hello World", "utf8");
 
 // Append to file
-fs.appendFileSync('log.txt', 'New log entry\n');
-await fsPromises.appendFile('log.txt', 'New log entry\n');
+fs.appendFileSync("log.txt", "New log entry\n");
+await fsPromises.appendFile("log.txt", "New log entry\n");
 ```
 
 ### Directory Operations
+
 ```javascript
 // Check if file/directory exists
-fs.existsSync('path/to/file');
-await fsPromises.access('path/to/file'); // Throws if doesn't exist
+fs.existsSync("path/to/file");
+await fsPromises.access("path/to/file"); // Throws if doesn't exist
 
 // Get file stats
-const stats = fs.statSync('file.txt');
-console.log(stats.isFile());      // true
+const stats = fs.statSync("file.txt");
+console.log(stats.isFile()); // true
 console.log(stats.isDirectory()); // false
-console.log(stats.size);          // file size in bytes
+console.log(stats.size); // file size in bytes
 
 // Create directory
-fs.mkdirSync('new-folder');
-fs.mkdirSync('nested/folder/structure', { recursive: true });
+fs.mkdirSync("new-folder");
+fs.mkdirSync("nested/folder/structure", { recursive: true });
 
 // Read directory contents
-const files = fs.readdirSync('.');
-const filesAsync = await fsPromises.readdir('.');
+const files = fs.readdirSync(".");
+const filesAsync = await fsPromises.readdir(".");
 
 // Remove files and directories
-fs.unlinkSync('file.txt');        // Delete file
-fs.rmdirSync('folder');           // Delete empty directory  
-fs.rmSync('folder', { recursive: true, force: true }); // Delete recursively
+fs.unlinkSync("file.txt"); // Delete file
+fs.rmdirSync("folder"); // Delete empty directory
+fs.rmSync("folder", { recursive: true, force: true }); // Delete recursively
 ```
 
 ### Path Operations
+
 ```javascript
-const path = require('path');
+const path = require("path");
 
 // Path manipulation
-path.join('/users', 'john', 'documents', 'file.txt');
-path.resolve('file.txt');                    // Absolute path
-path.dirname('/users/john/file.txt');        // '/users/john'
-path.basename('/users/john/file.txt');       // 'file.txt'
-path.extname('/users/john/file.txt');        // '.txt'
+path.join("/users", "john", "documents", "file.txt");
+path.resolve("file.txt"); // Absolute path
+path.dirname("/users/john/file.txt"); // '/users/john'
+path.basename("/users/john/file.txt"); // 'file.txt'
+path.extname("/users/john/file.txt"); // '.txt'
 
 // Parse path
-const parsed = path.parse('/users/john/file.txt');
+const parsed = path.parse("/users/john/file.txt");
 // { root: '/', dir: '/users/john', base: 'file.txt', ext: '.txt', name: 'file' }
 
 // Path constants
-console.log(__dirname);  // Current directory
+console.log(__dirname); // Current directory
 console.log(__filename); // Current file path
 console.log(process.cwd()); // Current working directory
 ```
@@ -863,9 +912,10 @@ console.log(process.cwd()); // Current working directory
 ## HTTP & Express.js
 
 ### Basic HTTP Server
+
 ```javascript
-const http = require('http');
-const url = require('url');
+const http = require("http");
+const url = require("url");
 
 // Create server
 const server = http.createServer((req, res) => {
@@ -874,19 +924,19 @@ const server = http.createServer((req, res) => {
   const method = req.method;
 
   // Set response headers
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
   // Handle routes
-  if (pathname === '/' && method === 'GET') {
+  if (pathname === "/" && method === "GET") {
     res.statusCode = 200;
-    res.end(JSON.stringify({ message: 'Hello World' }));
-  } else if (pathname === '/api/users' && method === 'GET') {
+    res.end(JSON.stringify({ message: "Hello World" }));
+  } else if (pathname === "/api/users" && method === "GET") {
     res.statusCode = 200;
     res.end(JSON.stringify({ users: [] }));
   } else {
     res.statusCode = 404;
-    res.end(JSON.stringify({ error: 'Not Found' }));
+    res.end(JSON.stringify({ error: "Not Found" }));
   }
 });
 
@@ -898,6 +948,7 @@ server.listen(PORT, () => {
 ```
 
 ### Express.js Framework
+
 ```bash
 # Install Express
 npm install express
@@ -905,13 +956,13 @@ npm install --save-dev nodemon  # For development
 ```
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 
 // Middleware
-app.use(express.json());                    // Parse JSON bodies
+app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse form data
-app.use(express.static('public'));          // Serve static files
+app.use(express.static("public")); // Serve static files
 
 // Custom middleware
 app.use((req, res, next) => {
@@ -920,30 +971,30 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello World' });
+app.get("/", (req, res) => {
+  res.json({ message: "Hello World" });
 });
 
-app.get('/users/:id', (req, res) => {
+app.get("/users/:id", (req, res) => {
   const { id } = req.params;
   const { include } = req.query;
   res.json({ id, include });
 });
 
-app.post('/users', (req, res) => {
+app.post("/users", (req, res) => {
   const userData = req.body;
   // Process user creation
-  res.status(201).json({ message: 'User created', user: userData });
+  res.status(201).json({ message: "User created", user: userData });
 });
 
-app.put('/users/:id', (req, res) => {
+app.put("/users/:id", (req, res) => {
   const { id } = req.params;
   const updates = req.body;
   // Update user
-  res.json({ message: 'User updated', id, updates });
+  res.json({ message: "User updated", id, updates });
 });
 
-app.delete('/users/:id', (req, res) => {
+app.delete("/users/:id", (req, res) => {
   const { id } = req.params;
   // Delete user
   res.status(204).end();
@@ -952,12 +1003,12 @@ app.delete('/users/:id', (req, res) => {
 // Error handling middleware
 app.use((error, req, res, next) => {
   console.error(error.stack);
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.status(500).json({ error: "Internal Server Error" });
 });
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).json({ error: 'Not Found' });
+  res.status(404).json({ error: "Not Found" });
 });
 
 // Start server
@@ -968,47 +1019,51 @@ app.listen(PORT, () => {
 ```
 
 ### Advanced Express Features
+
 ```javascript
 // Router
-const express = require('express');
+const express = require("express");
 const userRouter = express.Router();
 
-userRouter.get('/', (req, res) => {
+userRouter.get("/", (req, res) => {
   res.json({ users: [] });
 });
 
-userRouter.post('/', (req, res) => {
-  res.status(201).json({ message: 'User created' });
+userRouter.post("/", (req, res) => {
+  res.status(201).json({ message: "User created" });
 });
 
-app.use('/api/users', userRouter);
+app.use("/api/users", userRouter);
 
 // Middleware for authentication
 const authenticate = (req, res, next) => {
   const token = req.headers.authorization;
   if (!token) {
-    return res.status(401).json({ error: 'No token provided' });
+    return res.status(401).json({ error: "No token provided" });
   }
   // Verify token logic here
-  req.user = { id: 1, name: 'John' }; // Decoded user info
+  req.user = { id: 1, name: "John" }; // Decoded user info
   next();
 };
 
-app.get('/protected', authenticate, (req, res) => {
-  res.json({ message: 'Protected route', user: req.user });
+app.get("/protected", authenticate, (req, res) => {
+  res.json({ message: "Protected route", user: req.user });
 });
 
 // CORS middleware
-const cors = require('cors');
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 ```
 
 ## Environment & Configuration
 
 ### Environment Variables
+
 ```javascript
 // Access environment variables
 const port = process.env.PORT || 3000;
@@ -1048,6 +1103,7 @@ const dbHost = config.get('db.host');
 ```
 
 ### Command Line Arguments
+
 ```javascript
 // Access command line arguments
 console.log(process.argv);
@@ -1056,14 +1112,14 @@ console.log(process.argv);
 
 // Parse arguments manually
 const args = process.argv.slice(2);
-const port = args[args.indexOf('--port') + 1];
+const port = args[args.indexOf("--port") + 1];
 
 // Using commander package for complex CLI
-const { program } = require('commander');
+const { program } = require("commander");
 
 program
-  .option('-p, --port <number>', 'port number', '3000')
-  .option('-e, --env <string>', 'environment', 'development');
+  .option("-p, --port <number>", "port number", "3000")
+  .option("-e, --env <string>", "environment", "development");
 
 program.parse();
 const options = program.opts();
@@ -1073,6 +1129,7 @@ console.log(options.port, options.env);
 ## Testing
 
 ### Jest Testing Framework
+
 ```bash
 # Install Jest
 npm install --save-dev jest
@@ -1100,21 +1157,21 @@ function subtract(a, b) {
 module.exports = { add, subtract };
 
 // math.test.js
-const { add, subtract } = require('./math');
+const { add, subtract } = require("./math");
 
-describe('Math functions', () => {
-  test('adds 1 + 2 to equal 3', () => {
+describe("Math functions", () => {
+  test("adds 1 + 2 to equal 3", () => {
     expect(add(1, 2)).toBe(3);
   });
 
-  test('subtracts 5 - 2 to equal 3', () => {
+  test("subtracts 5 - 2 to equal 3", () => {
     expect(subtract(5, 2)).toBe(3);
   });
 
-  test('handles edge cases', () => {
+  test("handles edge cases", () => {
     expect(add(0, 0)).toBe(0);
     expect(add(-1, 1)).toBe(0);
-    expect(() => add('a', 'b')).toThrow(); // If function validates input
+    expect(() => add("a", "b")).toThrow(); // If function validates input
   });
 });
 
@@ -1124,10 +1181,10 @@ async function fetchUser(id) {
   return response.json();
 }
 
-test('fetches user data', async () => {
+test("fetches user data", async () => {
   const user = await fetchUser(1);
-  expect(user).toHaveProperty('id', 1);
-  expect(user).toHaveProperty('name');
+  expect(user).toHaveProperty("id", 1);
+  expect(user).toHaveProperty("name");
 });
 
 // Mock functions
@@ -1138,29 +1195,30 @@ expect(mockCallback).toHaveBeenCalled();
 ```
 
 ### Testing Express Apps
+
 ```javascript
 // app.test.js
-const request = require('supertest');
-const app = require('./app'); // Your Express app
+const request = require("supertest");
+const app = require("./app"); // Your Express app
 
-describe('API endpoints', () => {
-  test('GET / returns hello message', async () => {
+describe("API endpoints", () => {
+  test("GET / returns hello message", async () => {
     const response = await request(app)
-      .get('/')
+      .get("/")
       .expect(200)
-      .expect('Content-Type', /json/);
-    
-    expect(response.body).toEqual({ message: 'Hello World' });
+      .expect("Content-Type", /json/);
+
+    expect(response.body).toEqual({ message: "Hello World" });
   });
 
-  test('POST /users creates a user', async () => {
-    const userData = { name: 'John', email: 'john@example.com' };
-    
+  test("POST /users creates a user", async () => {
+    const userData = { name: "John", email: "john@example.com" };
+
     const response = await request(app)
-      .post('/users')
+      .post("/users")
       .send(userData)
       .expect(201);
-    
+
     expect(response.body.user).toMatchObject(userData);
   });
 });
@@ -1169,6 +1227,7 @@ describe('API endpoints', () => {
 ## Best Practices
 
 ### Code Organization
+
 ```javascript
 // Use consistent naming conventions
 const userName = 'john';           // camelCase for variables
@@ -1195,7 +1254,7 @@ exports.getUser = async (req, res) => {
 };
 
 exports.createUser = async (req, res) => {
-  // Implementation  
+  // Implementation
 };
 
 // Avoid deep nesting
@@ -1213,6 +1272,7 @@ return user?.profile?.address?.city || 'Unknown';
 ```
 
 ### Error Handling
+
 ```javascript
 // Always handle errors
 async function riskyOperation() {
@@ -1220,7 +1280,7 @@ async function riskyOperation() {
     const result = await someAsyncOperation();
     return result;
   } catch (error) {
-    console.error('Operation failed:', error.message);
+    console.error("Operation failed:", error.message);
     throw new Error(`Failed to complete operation: ${error.message}`);
   }
 }
@@ -1229,14 +1289,14 @@ async function riskyOperation() {
 class ValidationError extends Error {
   constructor(message) {
     super(message);
-    this.name = 'ValidationError';
+    this.name = "ValidationError";
   }
 }
 
 class NotFoundError extends Error {
   constructor(resource) {
     super(`${resource} not found`);
-    this.name = 'NotFoundError';
+    this.name = "NotFoundError";
   }
 }
 
@@ -1245,25 +1305,26 @@ app.use((error, req, res, next) => {
   if (error instanceof ValidationError) {
     return res.status(400).json({ error: error.message });
   }
-  
+
   if (error instanceof NotFoundError) {
     return res.status(404).json({ error: error.message });
   }
-  
-  console.error('Unexpected error:', error);
-  res.status(500).json({ error: 'Internal server error' });
+
+  console.error("Unexpected error:", error);
+  res.status(500).json({ error: "Internal server error" });
 });
 ```
 
 ### Performance Tips
+
 ```javascript
 // Use const and let instead of var
-const immutableValue = 'constant';
-let mutableValue = 'variable';
+const immutableValue = "constant";
+let mutableValue = "variable";
 
 // Prefer array methods over loops when possible
-const doubled = numbers.map(n => n * 2);
-const evens = numbers.filter(n => n % 2 === 0);
+const doubled = numbers.map((n) => n * 2);
+const evens = numbers.filter((n) => n % 2 === 0);
 
 // Debounce expensive operations
 function debounce(func, delay) {
@@ -1310,9 +1371,10 @@ const expensiveFunction = memoize((n) => {
 ```
 
 ### Security Best Practices
+
 ```javascript
 // Input validation
-const validator = require('validator');
+const validator = require("validator");
 
 function validateEmail(email) {
   return validator.isEmail(email);
@@ -1327,24 +1389,24 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const API_KEY = process.env.API_KEY;
 
 // Rate limiting
-const rateLimit = require('express-rate-limit');
+const rateLimit = require("express-rate-limit");
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  max: 100, // limit each IP to 100 requests per windowMs
 });
 
 app.use(limiter);
 
 // Helmet for security headers
-const helmet = require('helmet');
+const helmet = require("helmet");
 app.use(helmet());
 
 // HTTPS in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https') {
-      res.redirect(`https://${req.header('host')}${req.url}`);
+    if (req.header("x-forwarded-proto") !== "https") {
+      res.redirect(`https://${req.header("host")}${req.url}`);
     } else {
       next();
     }
@@ -1357,6 +1419,7 @@ if (process.env.NODE_ENV === 'production') {
 ### Common Issues
 
 #### Module Not Found
+
 ```bash
 # Error: Cannot find module './myModule'
 # Solutions:
@@ -1371,6 +1434,7 @@ import { myFunction } from './myModule.js'; // Note the .js
 ```
 
 #### Port Already in Use
+
 ```bash
 # Error: EADDRINUSE: address already in use :::3000
 # Solutions:
@@ -1387,17 +1451,18 @@ const PORT = process.env.PORT || 3001;
 ```
 
 #### Memory Leaks
+
 ```javascript
 // Common causes and solutions
 
 // 1. Event listeners not removed
 // Bad
-element.addEventListener('click', handler);
+element.addEventListener("click", handler);
 
-// Good  
-element.addEventListener('click', handler);
+// Good
+element.addEventListener("click", handler);
 // Later, when element is no longer needed:
-element.removeEventListener('click', handler);
+element.removeEventListener("click", handler);
 
 // 2. Timers not cleared
 // Bad
@@ -1407,7 +1472,7 @@ setInterval(() => {
 
 // Good
 const intervalId = setInterval(() => {
-  // Some operation  
+  // Some operation
 }, 1000);
 // Later:
 clearInterval(intervalId);
@@ -1422,6 +1487,7 @@ process.memoryUsage();
 ```
 
 #### Debugging Techniques
+
 ```javascript
 // Console debugging
 console.log('Debug info:', variable);
@@ -1451,18 +1517,19 @@ DEBUG=app:* node app.js
 ```
 
 #### Async/Await Issues
+
 ```javascript
 // Common mistake: not awaiting async functions
 // Bad
 async function badExample() {
   fetchData(); // Missing await!
-  console.log('This runs before fetchData completes');
+  console.log("This runs before fetchData completes");
 }
 
 // Good
 async function goodExample() {
   await fetchData();
-  console.log('This runs after fetchData completes');
+  console.log("This runs after fetchData completes");
 }
 
 // Handling multiple async operations
@@ -1471,10 +1538,7 @@ const user = await fetchUser(id);
 const posts = await fetchPosts(user.id);
 
 // Parallel (faster)
-const [user, posts] = await Promise.all([
-  fetchUser(id),
-  fetchPosts(id)
-]);
+const [user, posts] = await Promise.all([fetchUser(id), fetchPosts(id)]);
 
 // Error handling in async functions
 async function properErrorHandling() {
@@ -1482,13 +1546,14 @@ async function properErrorHandling() {
     const result = await riskyOperation();
     return result;
   } catch (error) {
-    console.error('Error occurred:', error);
+    console.error("Error occurred:", error);
     throw error; // Re-throw if needed
   }
 }
 ```
 
 #### Package Version Conflicts
+
 ```bash
 # Check for outdated packages
 npm outdated
@@ -1512,6 +1577,7 @@ npm ls --depth=0
 ```
 
 #### Performance Issues
+
 ```javascript
 // Profile performance
 console.time('slow-operation');
@@ -1540,3 +1606,11 @@ setTimeout(() => {
   console.log(h.mean); // Event loop delay
 }, 10000);
 ```
+
+## Tools & References
+
+### Essential Resources
+
+- **MDN Web Docs**: https://developer.mozilla.org/en-US/docs/Web/JavaScript - Comprehensive JavaScript reference
+- **Node.js Documentation**: https://nodejs.org/docs/ - Official Node.js docs
+- **npm**: https://www.npmjs.com/ - Package registry

@@ -1,6 +1,7 @@
 # Markdown Cheat Sheet
 
 ## Table of Contents
+
 - [Headers](#headers)
 - [Text Formatting](#text-formatting)
 - [Lists](#lists)
@@ -20,44 +21,55 @@
 
 ```markdown
 # H1 Header
+
 ## H2 Header
+
 ### H3 Header
+
 #### H4 Header
+
 ##### H5 Header
+
 ###### H6 Header
 
-Alternative H1
-==============
+# Alternative H1
 
-Alternative H2
---------------
+## Alternative H2
 ```
 
 **Rendered:**
+
 # H1 Header
+
 ## H2 Header
+
 ### H3 Header
+
 #### H4 Header
+
 ##### H5 Header
+
 ###### H6 Header
 
 ## Text Formatting
 
 ### Basic Formatting
+
 ```markdown
-**Bold text** or __Bold text__
-*Italic text* or _Italic text_
-***Bold and italic*** or ___Bold and italic___
+**Bold text** or **Bold text**
+_Italic text_ or _Italic text_
+**_Bold and italic_** or **_Bold and italic_**
 ~~Strikethrough~~
 ```
 
 **Rendered:**
-**Bold text** or __Bold text__  
-*Italic text* or _Italic text_  
-***Bold and italic*** or ___Bold and italic___  
+**Bold text** or **Bold text**  
+_Italic text_ or _Italic text_  
+**_Bold and italic_** or **_Bold and italic_**  
 ~~Strikethrough~~
 
 ### Advanced Formatting
+
 ```markdown
 This is <sub>subscript</sub> and <sup>superscript</sup>
 <mark>Highlighted text</mark>
@@ -72,6 +84,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ## Lists
 
 ### Unordered Lists
+
 ```markdown
 - Item 1
 - Item 2
@@ -82,13 +95,14 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 
 * Alternative syntax
 * Works the same
-  * Nested with asterisk
+  - Nested with asterisk
 
-+ Plus signs work too
-+ Same result
+- Plus signs work too
+- Same result
 ```
 
 **Rendered:**
+
 - Item 1
 - Item 2
   - Nested item 1
@@ -97,6 +111,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 - Item 3
 
 ### Ordered Lists
+
 ```markdown
 1. First item
 2. Second item
@@ -104,12 +119,13 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
    2. Another nested item
 3. Third item
 
-1. Numbers don't have to be sequential
-1. They will auto-increment
-1. Like this
+4. Numbers don't have to be sequential
+5. They will auto-increment
+6. Like this
 ```
 
 **Rendered:**
+
 1. First item
 2. Second item
    1. Nested numbered item
@@ -117,6 +133,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 3. Third item
 
 ### Task Lists (GitHub Flavored)
+
 ```markdown
 - [x] Completed task
 - [ ] Uncompleted task
@@ -126,6 +143,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ```
 
 **Rendered:**
+
 - [x] Completed task
 - [ ] Uncompleted task
 - [ ] Another task
@@ -135,6 +153,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ## Links
 
 ### Basic Links
+
 ```markdown
 [Link text](https://example.com)
 [Link with title](https://example.com "Optional title")
@@ -143,6 +162,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ```
 
 ### Reference Links
+
 ```markdown
 [Link text][reference]
 [Another link][another-ref]
@@ -152,6 +172,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ```
 
 ### Internal Links (Anchors)
+
 ```markdown
 [Link to section](#headers)
 [Link to custom anchor](#custom-anchor)
@@ -162,12 +183,14 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ## Images
 
 ### Basic Images
+
 ```markdown
 ![Alt text](image-url.jpg)
 ![Alt text](image-url.jpg "Optional title")
 ```
 
 ### Reference Images
+
 ```markdown
 ![Alt text][image-ref]
 
@@ -175,11 +198,13 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ```
 
 ### Images with Links
+
 ```markdown
 [![Alt text](image-url.jpg)](https://example.com)
 ```
 
 ### HTML Image Control
+
 ```markdown
 <img src="image-url.jpg" alt="Alt text" width="300" height="200">
 ```
@@ -187,6 +212,7 @@ This is <sub>subscript</sub> and <sup>superscript</sup>
 ## Code
 
 ### Inline Code
+
 ```markdown
 Use `backticks` for inline code.
 Use `git status` to check repository status.
@@ -197,6 +223,7 @@ Use `backticks` for inline code.
 Use `git status` to check repository status.
 
 ### Code Blocks
+
 ````markdown
 ```
 Basic code block
@@ -206,7 +233,7 @@ No syntax highlighting
 ```javascript
 // JavaScript code block
 function hello() {
-    console.log("Hello, World!");
+  console.log("Hello, World!");
 }
 ```
 
@@ -224,6 +251,7 @@ ls -la
 ````
 
 ### Indented Code Blocks
+
 ```markdown
     Indent with 4 spaces
     for code blocks
@@ -233,9 +261,10 @@ ls -la
 ## Tables
 
 ### Basic Tables
+
 ```markdown
 | Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Row 1    | Data     | Data     |
 | Row 2    | Data     | Data     |
 ```
@@ -243,36 +272,39 @@ ls -la
 **Rendered:**
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
-| Row 1    | Data     | Data     |
-| Row 2    | Data     | Data     |
+| Row 1 | Data | Data |
+| Row 2 | Data | Data |
 
 ### Table Alignment
+
 ```markdown
-| Left | Center | Right |
-|:-----|:------:|------:|
-| Left | Center | Right |
-| align| align  | align |
+| Left  | Center | Right |
+| :---- | :----: | ----: |
+| Left  | Center | Right |
+| align | align  | align |
 ```
 
 **Rendered:**
 | Left | Center | Right |
 |:-----|:------:|------:|
 | Left | Center | Right |
-| align| align  | align |
+| align| align | align |
 
 ### Complex Table Content
+
 ```markdown
-| Feature | Supported | Notes |
-|---------|:---------:|-------|
-| **Bold** | ✅ | Works in tables |
-| `Code` | ✅ | Inline code works |
-| [Links](/) | ✅ | Links work too |
-| Line<br>breaks | ✅ | Use `<br>` tag |
+| Feature        | Supported | Notes             |
+| -------------- | :-------: | ----------------- |
+| **Bold**       |    ✅     | Works in tables   |
+| `Code`         |    ✅     | Inline code works |
+| [Links](/)     |    ✅     | Links work too    |
+| Line<br>breaks |    ✅     | Use `<br>` tag    |
 ```
 
 ## Blockquotes
 
 ### Basic Blockquotes
+
 ```markdown
 > This is a blockquote.
 > It can span multiple lines.
@@ -282,26 +314,29 @@ ls -la
 ```
 
 **Rendered:**
+
 > This is a blockquote.
 > It can span multiple lines.
 
 ### Nested Blockquotes
+
 ```markdown
 > This is a blockquote.
-> 
+>
 > > This is a nested blockquote.
 > > It's indented further.
-> 
+>
 > Back to the original level.
 ```
 
 ### Blockquotes with Other Elements
+
 ```markdown
 > ## Header in blockquote
-> 
+>
 > - List item 1
 > - List item 2
-> 
+>
 > `Code` and **bold** work too.
 ```
 
@@ -309,17 +344,15 @@ ls -la
 
 ```markdown
 ---
+---
 
-***
-
-___
+---
 
 <!-- HTML version -->
 <hr>
 ```
 
-**Rendered:**
----
+## **Rendered:**
 
 ## Line Breaks
 
@@ -347,6 +380,7 @@ HTML break tag works too.
 ```
 
 **Characters that can be escaped:**
+
 ```
 \ ` * _ { } [ ] ( ) # + - . !
 ```
@@ -354,6 +388,7 @@ HTML break tag works too.
 ## GitHub Flavored Markdown
 
 ### Syntax Highlighting
+
 ````markdown
 ```diff
 + Added line
@@ -370,6 +405,7 @@ HTML break tag works too.
 ````
 
 ### Mentions and References
+
 ```markdown
 @username mentions a user
 #123 references issue #123
@@ -378,6 +414,7 @@ username/repository#123 references issue in another repo
 ```
 
 ### Emoji
+
 ```markdown
 :smile: :heart: :thumbsup:
 :rocket: :sparkles: :tada:
@@ -386,6 +423,7 @@ GitHub also supports Unicode emoji: 😄 ❤️ 👍
 ```
 
 ### Collapsible Sections
+
 ```markdown
 <details>
 <summary>Click to expand</summary>
@@ -400,10 +438,12 @@ Hidden content goes here.
 ```
 
 ### Math (GitHub)
+
 ```markdown
 Inline math: $x^2 + y^2 = z^2$
 
 Block math:
+
 $$
 \sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n
 $$
@@ -412,6 +452,7 @@ $$
 ## Extended Syntax
 
 ### Footnotes
+
 ```markdown
 Here's a sentence with a footnote[^1].
 
@@ -419,6 +460,7 @@ Here's a sentence with a footnote[^1].
 ```
 
 ### Definition Lists
+
 ```markdown
 Term 1
 : Definition 1
@@ -429,21 +471,24 @@ Term 2
 ```
 
 ### Abbreviations
+
 ```markdown
 The HTML specification is maintained by the W3C.
 
-*[HTML]: Hyper Text Markup Language
-*[W3C]: World Wide Web Consortium
+_[HTML]: Hyper Text Markup Language
+_[W3C]: World Wide Web Consortium
 ```
 
 ## Tips & Best Practices
 
 ### File Naming
+
 - Use `.md` or `.markdown` extension
 - Use lowercase with hyphens: `my-document.md`
 - Avoid spaces in filenames
 
 ### Writing Tips
+
 - Use consistent heading hierarchy
 - Add blank lines around headers
 - Use meaningful link text (avoid "click here")
@@ -451,12 +496,14 @@ The HTML specification is maintained by the W3C.
 - Use tables sparingly; consider lists for simple data
 
 ### Organization
+
 ```markdown
 # Document Title
 
 Brief description of the document.
 
 ## Table of Contents
+
 - [Section 1](#section-1)
 - [Section 2](#section-2)
 
@@ -470,6 +517,7 @@ Content here...
 ```
 
 ### Common Pitfalls
+
 - Forgetting blank lines around code blocks
 - Inconsistent list indentation
 - Missing alt text for images
@@ -477,6 +525,7 @@ Content here...
 - Not testing how it renders
 
 ### Tools and Editors
+
 - **VS Code**: Great Markdown support with preview
 - **Typora**: WYSIWYG Markdown editor
 - **Mark Text**: Real-time preview editor
@@ -484,23 +533,35 @@ Content here...
 - **CLI**: Pandoc for conversion
 
 ### Markdown Linting
+
 Use tools like:
+
 - `markdownlint` for VS Code
 - `remark-lint` for Node.js
 - `mdl` (Markdown Lint Tool)
 
 ### Preview and Testing
+
 - Always preview your Markdown
 - Test on target platform (GitHub, GitLab, etc.)
 - Check on mobile devices
 - Validate links regularly
 
 ### Performance Tips
+
 - Optimize images (compress, use appropriate formats)
 - Use relative links when possible
 - Keep documents focused and not too long
 - Use proper heading structure for navigation
 
+## Tools & References
+
+### Essential Resources
+
+- **CommonMark Spec**: https://commonmark.org/ - Standard Markdown specification
+- **GitHub Flavored Markdown**: https://github.github.com/gfm/ - GitHub's Markdown specification
+- **Markdown Guide**: https://www.markdownguide.org/ - Comprehensive reference
+
 ---
 
-*Remember: Different Markdown parsers may have slight variations. Always test your content on the target platform.*
+_Remember: Different Markdown parsers may have slight variations. Always test your content on the target platform._

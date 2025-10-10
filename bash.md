@@ -1,6 +1,7 @@
 # Bash Scripting Cheat Sheet
 
 ## Table of Contents
+
 - [Script Basics](#script-basics)
 - [Variables](#variables)
 - [Command Line Arguments](#command-line-arguments)
@@ -20,6 +21,7 @@
 ## Script Basics
 
 ### Shebang and Script Structure
+
 ```bash
 #!/bin/bash
 # This is a comment
@@ -36,6 +38,7 @@ echo "Hello, World!"
 ```
 
 ### Making Scripts Executable
+
 ```bash
 # Make script executable
 chmod +x script.sh
@@ -48,6 +51,7 @@ bash script.sh
 ```
 
 ### Script Options
+
 ```bash
 #!/bin/bash
 
@@ -64,6 +68,7 @@ set -v
 ## Variables
 
 ### Variable Declaration and Usage
+
 ```bash
 # Variable assignment (no spaces around =)
 name="John"
@@ -85,6 +90,7 @@ export MY_VAR="value"
 ```
 
 ### Special Variables
+
 ```bash
 $0    # Script name
 $1, $2, $3...  # Positional parameters
@@ -97,6 +103,7 @@ $!    # Process ID of last background command
 ```
 
 ### Variable Types
+
 ```bash
 # String variables
 name="John Doe"
@@ -122,6 +129,7 @@ export DATABASE_URL="postgres://localhost/mydb"
 ## Command Line Arguments
 
 ### Processing Arguments
+
 ```bash
 #!/bin/bash
 
@@ -141,6 +149,7 @@ done
 ```
 
 ### Using getopts for Options
+
 ```bash
 #!/bin/bash
 
@@ -177,6 +186,7 @@ echo "Remaining arguments: $@"
 ```
 
 ### Advanced Argument Parsing
+
 ```bash
 #!/bin/bash
 
@@ -205,6 +215,7 @@ done
 ## User Input
 
 ### Reading Input
+
 ```bash
 # Simple input
 echo "What's your name?"
@@ -234,6 +245,7 @@ done
 ```
 
 ### Input Validation
+
 ```bash
 # Validate numeric input
 while true; do
@@ -266,6 +278,7 @@ fi
 ## Conditionals
 
 ### If Statements
+
 ```bash
 # Basic if statement
 if [ "$name" == "John" ]; then
@@ -292,6 +305,7 @@ fi
 ```
 
 ### Test Conditions
+
 ```bash
 # File tests
 [ -f file.txt ]     # File exists and is regular file
@@ -319,6 +333,7 @@ fi
 ```
 
 ### Modern Test Syntax
+
 ```bash
 # Double brackets (more features)
 if [[ $name == "John" || $name == "Jane" ]]; then
@@ -337,6 +352,7 @@ fi
 ```
 
 ### Case Statements
+
 ```bash
 case $choice in
     1)
@@ -376,6 +392,7 @@ esac
 ## Loops
 
 ### For Loops
+
 ```bash
 # Loop over list
 for item in apple banana orange; do
@@ -405,6 +422,7 @@ done
 ```
 
 ### While Loops
+
 ```bash
 # Basic while loop
 counter=1
@@ -432,6 +450,7 @@ done
 ```
 
 ### Until Loops
+
 ```bash
 # Until loop (opposite of while)
 counter=1
@@ -442,6 +461,7 @@ done
 ```
 
 ### Loop Control
+
 ```bash
 for i in {1..10}; do
     if [ $i -eq 3 ]; then
@@ -457,6 +477,7 @@ done
 ## Functions
 
 ### Function Definition and Usage
+
 ```bash
 # Basic function
 greet() {
@@ -493,17 +514,18 @@ fi
 ```
 
 ### Advanced Functions
+
 ```bash
 # Function with local variables
 process_data() {
     local input_file=$1
     local output_file=$2
     local temp_file="/tmp/processing_$$"
-    
+
     # Process data
     cat "$input_file" | sort > "$temp_file"
     mv "$temp_file" "$output_file"
-    
+
     echo "Processing complete"
 }
 
@@ -531,6 +553,7 @@ echo "Counter: $global_counter"  # Counter: 1
 ## Arrays
 
 ### Indexed Arrays
+
 ```bash
 # Array declaration
 fruits=("apple" "banana" "orange")
@@ -558,6 +581,7 @@ done
 ```
 
 ### Associative Arrays
+
 ```bash
 # Declare associative array (Bash 4+)
 declare -A person
@@ -581,6 +605,7 @@ done
 ```
 
 ### Array Operations
+
 ```bash
 # Array slicing
 numbers=(1 2 3 4 5 6 7 8 9 10)
@@ -600,6 +625,7 @@ original=("${original[@]}")  # Reindex array
 ## String Operations
 
 ### String Manipulation
+
 ```bash
 string="Hello World"
 
@@ -627,6 +653,7 @@ echo ${path%/*}           # "/home/user" (remove filename, keep path)
 ```
 
 ### String Comparison and Testing
+
 ```bash
 string1="hello"
 string2="world"
@@ -644,6 +671,7 @@ echo ${defined_var:+"alternative"}    # "alternative" if defined_var is set
 ```
 
 ### Advanced String Operations
+
 ```bash
 # String contains substring
 if [[ "$string" == *"World"* ]]; then
@@ -670,6 +698,7 @@ done
 ## File Operations
 
 ### File Testing and Information
+
 ```bash
 file="example.txt"
 
@@ -690,6 +719,7 @@ wc -l "$file"            # Line count
 ```
 
 ### Reading Files
+
 ```bash
 # Read entire file
 content=$(cat file.txt)
@@ -715,6 +745,7 @@ tail -f log.txt
 ```
 
 ### Writing Files
+
 ```bash
 # Write to file (overwrite)
 echo "Hello World" > output.txt
@@ -738,6 +769,7 @@ EOF
 ```
 
 ### File Operations
+
 ```bash
 # Copy files
 cp source.txt destination.txt
@@ -762,6 +794,7 @@ find . -size +1M            # Files larger than 1MB
 ```
 
 ### File Permissions
+
 ```bash
 # Change permissions
 chmod 755 script.sh         # rwxr-xr-x
@@ -780,6 +813,7 @@ stat -c "%A %U %G" file.txt
 ## Process Management
 
 ### Running Commands
+
 ```bash
 # Run command in background
 long_running_command &
@@ -798,6 +832,7 @@ cat file.txt | grep "pattern" | sort | uniq
 ```
 
 ### Process Information
+
 ```bash
 # Current process ID
 echo $$
@@ -821,6 +856,7 @@ pkill -f "pattern"
 ```
 
 ### Job Control
+
 ```bash
 # List jobs
 jobs
@@ -841,6 +877,7 @@ nohup long_running_command &
 ## Error Handling
 
 ### Exit Codes
+
 ```bash
 # Check exit code of last command
 if [ $? -eq 0 ]; then
@@ -856,6 +893,7 @@ exit 2    # Specific error
 ```
 
 ### Error Handling Patterns
+
 ```bash
 # Simple error handling
 command || {
@@ -892,6 +930,7 @@ trap interrupt_handler INT TERM
 ```
 
 ### Logging
+
 ```bash
 # Redirect output
 command > output.log 2>&1   # Redirect stdout and stderr
@@ -911,6 +950,7 @@ log "Script completed"
 ## Common Commands
 
 ### Text Processing
+
 ```bash
 # grep - search text
 grep "pattern" file.txt
@@ -943,6 +983,7 @@ cut -c1-10 file.txt           # Extract characters 1-10
 ```
 
 ### System Information
+
 ```bash
 # System info
 uname -a                      # System information
@@ -963,6 +1004,7 @@ htop                        # Enhanced process monitor
 ```
 
 ### Network Commands
+
 ```bash
 # Network info
 ifconfig                     # Network interfaces (deprecated)
@@ -979,6 +1021,7 @@ curl -s https://api.github.com/users/octocat
 ## Best Practices
 
 ### Script Header Template
+
 ```bash
 #!/bin/bash
 
@@ -1046,9 +1089,9 @@ trap error_handler ERR
 # Main script logic starts here
 main() {
     log_info "Starting $SCRIPT_NAME"
-    
+
     # Your script logic here
-    
+
     log_info "$SCRIPT_NAME completed successfully"
 }
 
@@ -1057,6 +1100,7 @@ main "$@"
 ```
 
 ### Security Best Practices
+
 ```bash
 # Always quote variables
 echo "$variable"              # Good
@@ -1091,6 +1135,7 @@ fi
 ## Debugging
 
 ### Debug Techniques
+
 ```bash
 # Enable debug mode
 set -x                       # Print commands as executed
@@ -1115,6 +1160,7 @@ set -x
 ```
 
 ### Common Debugging Commands
+
 ```bash
 # Check script syntax
 bash -n script.sh
@@ -1131,6 +1177,13 @@ fi
 set | grep "^variable_prefix"
 ```
 
+## Tools & References
+
+### Essential Tools
+
+- **ShellCheck**: https://www.shellcheck.net/ - Shell script linter
+- **GNU Bash Manual**: https://www.gnu.org/software/bash/manual/ - Official documentation
+
 ---
 
-*Remember: Always test your scripts thoroughly and follow security best practices. Use `shellcheck` to lint your scripts for common issues.*
+_Remember: Always test your scripts thoroughly and follow security best practices. Use `shellcheck` to lint your scripts for common issues._

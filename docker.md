@@ -1,6 +1,7 @@
 # Docker Cheat Sheet
 
 ## Table of Contents
+
 - [Installation & Setup](#installation--setup)
 - [Basic Commands](#basic-commands)
 - [Images](#images)
@@ -17,6 +18,7 @@
 ## Installation & Setup
 
 ### Check Installation
+
 ```bash
 # Check Docker version
 docker --version
@@ -30,6 +32,7 @@ docker-compose --version
 ```
 
 ### First Steps
+
 ```bash
 # Test Docker installation
 docker run hello-world
@@ -42,6 +45,7 @@ sudo systemctl start docker
 ## Basic Commands
 
 ### Getting Help
+
 ```bash
 # Get help for Docker
 docker --help
@@ -52,6 +56,7 @@ docker build --help
 ```
 
 ### System Information
+
 ```bash
 # Show Docker system information
 docker info
@@ -66,6 +71,7 @@ docker events
 ## Images
 
 ### Managing Images
+
 ```bash
 # List all images
 docker images
@@ -90,6 +96,7 @@ docker image prune -a
 ```
 
 ### Building Images
+
 ```bash
 # Build image from Dockerfile
 docker build -t <image-name> .
@@ -105,6 +112,7 @@ docker build --no-cache -t <image-name> .
 ```
 
 ### Image Information
+
 ```bash
 # Show image history
 docker history <image-name>
@@ -119,6 +127,7 @@ docker image inspect <image-name>
 ## Containers
 
 ### Running Containers
+
 ```bash
 # Run container
 docker run <image-name>
@@ -143,6 +152,7 @@ docker run -it <image-name> /bin/bash
 ```
 
 ### Container Management
+
 ```bash
 # List running containers
 docker ps
@@ -170,6 +180,7 @@ docker container prune
 ```
 
 ### Container Information
+
 ```bash
 # Show container logs
 docker logs <container-name>
@@ -191,6 +202,7 @@ docker stats <container-name>
 ```
 
 ### Executing Commands in Containers
+
 ```bash
 # Execute command in running container
 docker exec <container-name> <command>
@@ -205,6 +217,7 @@ docker exec -u <username> -it <container-name> /bin/bash
 ## Dockerfile
 
 ### Basic Dockerfile Structure
+
 ```dockerfile
 # Use official base image
 FROM node:16-alpine
@@ -239,6 +252,7 @@ CMD ["npm", "start"]
 ```
 
 ### Common Dockerfile Instructions
+
 ```dockerfile
 # Base image
 FROM ubuntu:20.04
@@ -281,6 +295,7 @@ HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
 ```
 
 ### Multi-stage Builds
+
 ```dockerfile
 # Build stage
 FROM node:16 AS builder
@@ -302,8 +317,9 @@ CMD ["npm", "start"]
 ## Docker Compose
 
 ### Basic docker-compose.yml
+
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   web:
@@ -339,6 +355,7 @@ networks:
 ```
 
 ### Docker Compose Commands
+
 ```bash
 # Start services
 docker-compose up
@@ -374,6 +391,7 @@ docker-compose ps
 ## Volumes
 
 ### Volume Management
+
 ```bash
 # Create volume
 docker volume create <volume-name>
@@ -392,6 +410,7 @@ docker volume prune
 ```
 
 ### Volume Types
+
 ```bash
 # Named volume
 docker run -v my-volume:/data <image-name>
@@ -409,6 +428,7 @@ docker run --tmpfs /tmp <image-name>
 ## Networks
 
 ### Network Management
+
 ```bash
 # List networks
 docker network ls
@@ -436,6 +456,7 @@ docker network prune
 ```
 
 ### Running Containers with Custom Networks
+
 ```bash
 # Run container with custom network
 docker run --network <network-name> <image-name>
@@ -447,6 +468,7 @@ docker run --network <network-name> --network-alias <alias> <image-name>
 ## Registry & Hub
 
 ### Docker Hub
+
 ```bash
 # Login to Docker Hub
 docker login
@@ -465,6 +487,7 @@ docker pull <username>/<repository>:<tag>
 ```
 
 ### Private Registry
+
 ```bash
 # Run local registry
 docker run -d -p 5000:5000 --name registry registry:2
@@ -482,6 +505,7 @@ docker pull localhost:5000/<image-name>
 ## System Management
 
 ### Cleanup Commands
+
 ```bash
 # Remove all stopped containers, unused networks, images, and build cache
 docker system prune
@@ -503,6 +527,7 @@ docker network prune
 ```
 
 ### Resource Management
+
 ```bash
 # Set memory limit
 docker run -m 512m <image-name>
@@ -523,6 +548,7 @@ docker stats <container-name>
 ## Best Practices
 
 ### Dockerfile Best Practices
+
 - Use official base images
 - Use specific tags, avoid `latest`
 - Minimize layers by combining RUN commands
@@ -532,6 +558,7 @@ docker stats <container-name>
 - Order instructions from least to most frequently changing
 
 ### Security Best Practices
+
 ```dockerfile
 # Use non-root user
 RUN groupadd -r appuser && useradd -r -g appuser appuser
@@ -545,6 +572,7 @@ docker scan <image-name>
 ```
 
 ### Performance Tips
+
 - Use `.dockerignore` file
 - Leverage build cache
 - Use small base images (Alpine Linux)
@@ -553,6 +581,7 @@ docker scan <image-name>
 - Clean up package managers in same layer
 
 ### Sample .dockerignore
+
 ```dockerignore
 node_modules
 npm-debug.log
@@ -568,6 +597,7 @@ coverage
 ## Troubleshooting
 
 ### Common Issues
+
 ```bash
 # Container exits immediately
 docker logs <container-name>
@@ -588,6 +618,7 @@ docker network inspect bridge
 ```
 
 ### Debugging Containers
+
 ```bash
 # Run container in interactive mode
 docker run -it <image-name> /bin/sh
@@ -609,6 +640,7 @@ docker cp ./local-file <container-name>:/path/to/file
 ```
 
 ### Performance Monitoring
+
 ```bash
 # Monitor resource usage
 docker stats
@@ -623,6 +655,14 @@ docker exec <container-name> df -h
 docker events --filter container=<container-name>
 ```
 
+## Tools & References
+
+### Essential Resources
+
+- **Official Documentation**: https://docs.docker.com/ - Complete Docker reference
+- **Docker Hub**: https://hub.docker.com/ - Container image registry
+- **Dockerfile Best Practices**: https://docs.docker.com/develop/dev-best-practices/
+
 ---
 
-*Remember: Docker can consume significant disk space. Regularly clean up unused containers, images, and volumes using `docker system prune`.*
+_Remember: Docker can consume significant disk space. Regularly clean up unused containers, images, and volumes using `docker system prune`._

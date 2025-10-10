@@ -1,6 +1,7 @@
 # Git Cheat Sheet
 
 ## Table of Contents
+
 - [Configuration](#configuration)
 - [Repository Initialization](#repository-initialization)
 - [Basic Commands](#basic-commands)
@@ -16,6 +17,7 @@
 ## Configuration
 
 ### First-time Setup
+
 ```bash
 # Set global username and email
 git config --global user.name "Your Name"
@@ -30,6 +32,7 @@ git config --global core.editor "vim"          # Vim
 ```
 
 ### View Configuration
+
 ```bash
 # View all config settings
 git config --list
@@ -42,6 +45,7 @@ git config user.email
 ## Repository Initialization
 
 ### Create New Repository
+
 ```bash
 # Initialize new repository
 git init
@@ -51,6 +55,7 @@ git init -b main
 ```
 
 ### Clone Repository
+
 ```bash
 # Clone repository
 git clone <repository-url>
@@ -65,6 +70,7 @@ git clone -b <branch-name> <repository-url>
 ## Basic Commands
 
 ### Status and Information
+
 ```bash
 # Check repository status
 git status
@@ -77,6 +83,7 @@ git branch --show-current
 ```
 
 ### Adding and Committing
+
 ```bash
 # Add specific file
 git add <filename>
@@ -103,6 +110,7 @@ git commit --amend
 ## Branching
 
 ### Create and Switch Branches
+
 ```bash
 # Create new branch
 git branch <branch-name>
@@ -121,6 +129,7 @@ git switch <branch-name>
 ```
 
 ### Branch Management
+
 ```bash
 # List all branches
 git branch
@@ -139,6 +148,7 @@ git branch -m <new-name>
 ```
 
 ### Merging
+
 ```bash
 # Merge branch into current branch
 git merge <branch-name>
@@ -153,6 +163,7 @@ git merge --abort
 ## Remote Repositories
 
 ### Remote Management
+
 ```bash
 # Add remote repository
 git remote add origin <repository-url>
@@ -168,6 +179,7 @@ git remote rename <old-name> <new-name>
 ```
 
 ### Push and Pull
+
 ```bash
 # Push to remote
 git push origin <branch-name>
@@ -194,6 +206,7 @@ git fetch --all
 ## Viewing History
 
 ### Log Commands
+
 ```bash
 # View commit history
 git log
@@ -221,6 +234,7 @@ git log --author="Author Name"
 ```
 
 ### Diff Commands
+
 ```bash
 # Show unstaged changes
 git diff
@@ -238,6 +252,7 @@ git diff <branch1>..<branch2> -- <filename>
 ## Undoing Changes
 
 ### Unstaging and Reverting
+
 ```bash
 # Unstage file
 git reset HEAD <filename>
@@ -259,6 +274,7 @@ git restore --staged <filename>
 ```
 
 ### Reset Commands
+
 ```bash
 # Soft reset (keep changes staged)
 git reset --soft HEAD~1
@@ -274,6 +290,7 @@ git reset --hard <commit-hash>
 ```
 
 ### Revert Commits
+
 ```bash
 # Revert specific commit
 git revert <commit-hash>
@@ -285,6 +302,7 @@ git revert -m 1 <merge-commit-hash>
 ## Stashing
 
 ### Basic Stashing
+
 ```bash
 # Stash current changes
 git stash
@@ -312,6 +330,7 @@ git stash clear
 ```
 
 ### Advanced Stashing
+
 ```bash
 # Stash including untracked files
 git stash -u
@@ -326,6 +345,7 @@ git stash branch <branch-name>
 ## Advanced Commands
 
 ### Rebasing
+
 ```bash
 # Rebase current branch onto main
 git rebase main
@@ -341,6 +361,7 @@ git rebase --abort
 ```
 
 ### Cherry-picking
+
 ```bash
 # Cherry-pick specific commit
 git cherry-pick <commit-hash>
@@ -353,6 +374,7 @@ git cherry-pick -n <commit-hash>
 ```
 
 ### Tagging
+
 ```bash
 # Create lightweight tag
 git tag <tag-name>
@@ -390,12 +412,14 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 ## Tips & Best Practices
 
 ### Commit Messages
+
 - Use imperative mood: "Add feature" not "Added feature"
 - Keep first line under 50 characters
 - Use blank line before detailed description
 - Reference issues: "Fix #123: Update user validation"
 
 ### Workflow Tips
+
 - Pull before pushing
 - Use meaningful branch names
 - Keep commits small and focused
@@ -403,6 +427,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 - Use `.gitignore` to exclude unnecessary files
 
 ### Common .gitignore Patterns
+
 ```gitignore
 # Dependencies
 node_modules/
@@ -429,6 +454,7 @@ Thumbs.db
 ```
 
 ### Emergency Commands
+
 ```bash
 # Oh no, I committed to the wrong branch!
 git reset HEAD~ --soft
@@ -446,11 +472,20 @@ git reset --soft HEAD~1
 ```
 
 ### Performance Tips
+
 - Use `git fetch` regularly to stay updated
 - Clean up old branches: `git branch -d <branch-name>`
 - Use `git gc` occasionally to optimize repository
 - Consider using `git worktree` for multiple working directories
 
+## Tools & References
+
+### Essential Resources
+
+- **Official Git Documentation**: https://git-scm.com/doc
+- **Pro Git Book**: https://git-scm.com/book/en/v2 - Free comprehensive guide
+- **Learn Git Branching**: https://learngitbranching.js.org/ - Interactive tutorial
+
 ---
 
-*Remember: Git is powerful but can be complex. When in doubt, make backups and consult the documentation with `git help <command>`.*
+_Remember: Git is powerful but can be complex. When in doubt, make backups and consult the documentation with `git help <command>`._
