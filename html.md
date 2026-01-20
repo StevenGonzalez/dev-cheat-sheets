@@ -875,5 +875,3 @@ if ('serviceWorker' in navigator) {
 ---
 
 *This HTML cheat sheet covers modern web standards and best practices as of 2026. Always validate your HTML and test for accessibility across different browsers and devices.*
-```
-```

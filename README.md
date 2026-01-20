@@ -30,6 +30,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices  |
 | [**Linux Commands Cheat Sheet**](./linux.md)          | Essential terminal commands     | File operations, process management, networking, system admin, SSH      |
 | [**Python Cheat Sheet**](./python.md)                 | Core language and scripting     | Syntax, data structures, functions, classes, libraries, best practices  |
+| [**React Native Cheat Sheet**](./react-native.md)     | Mobile app development          | Components, navigation, styling, hooks, performance, platform APIs      |
 | [**Regex Cheat Sheet**](./regex.md)                   | Pattern matching for text       | Character classes, quantifiers, groups, lookaround, common patterns     |
 | [**SQL Cheat Sheet**](./sql.md)                       | Querying relational databases   | SELECT, JOINs, aggregation, window functions, indexing, transactions    |
 | [**TypeScript Cheat Sheet**](./typescript.md)         | Typed JavaScript superset       | Types, interfaces, generics, utility types, classes, tsconfig, patterns |
