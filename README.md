@@ -39,6 +39,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | Guide                                                     | Description                      | Key Topics                                                               |
 | --------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------ |
 | [**CSS Cheat Sheet**](./css.md)                           | Styling and layout for web pages | Selectors, flexbox, grid, animations, responsive design, modern CSS      |
+| [**HTML Cheat Sheet**](./html.md)                         | Markup and web page structure    | Semantic elements, forms, accessibility, modern HTML5 features, SEO      |
 | [**HTTP Status Codes Reference**](./http-status-codes.md) | Web response status codes        | 1xx-5xx codes, RESTful APIs, browser behavior, debugging, best practices |
 
 ### Documentation and Editing
