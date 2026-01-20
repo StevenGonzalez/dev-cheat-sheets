@@ -24,6 +24,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | Guide                                                 | Description                     | Key Topics                                                              |
 | ----------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
 | [**Bash Scripting Cheat Sheet**](./bash.md)           | Shell scripting and automation  | Variables, loops, functions, file operations, debugging                 |
+| [**C# Cheat Sheet**](./csharp.md)                     | .NET development and C# language | Syntax, OOP, LINQ, async/await, generics, collections, best practices  |
 | [**Docker Cheat Sheet**](./docker.md)                 | Containerization and deployment | Images, containers, Dockerfile, Docker Compose, best practices          |
 | [**Git Cheat Sheet**](./git.md)                       | Version control with Git        | Commands, branching, merging, workflows, best practices                 |
 | [**JavaScript/Node.js Cheat Sheet**](./javascript.md) | Web and server-side development | ES6+, async/await, DOM, Node.js, Express, NPM, testing, best practices  |
