@@ -1,4 +1,4 @@
-# Developer Cheat Sheets 📚
+# Developer Cheat Sheets
 
 > A comprehensive collection of developer cheat sheets and quick-reference guides for essential tools and workflows.
 
@@ -7,7 +7,7 @@
 
 This repository contains carefully crafted cheat sheets for the most commonly used developer tools and technologies. Each guide is designed to be both beginner-friendly and valuable for experienced developers who need quick reference materials.
 
-## 🎯 Purpose
+## Purpose
 
 Whether you're a junior developer learning the ropes or a senior engineer who needs a quick reminder of syntax and commands, these cheat sheets provide:
 
@@ -50,7 +50,7 @@ Whether you're a junior developer learning the ropes or a senior engineer who ne
 | [**Markdown Cheat Sheet**](./markdown.md) | Document formatting and writing | Syntax, tables, links, GitHub flavored markdown |
 | [**VS Code Cheat Sheet**](./vscode.md)    | Code editor productivity        | Shortcuts, extensions, debugging, customization |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Browse Online
 
@@ -84,7 +84,7 @@ Each cheat sheet is structured for maximum usability:
 4. **Tips & Best Practices** - Professional insights
 5. **Troubleshooting** - Common issues and solutions
 
-## 📝 Format Standards
+## Format Standards
 
 All cheat sheets follow these standards:
 
@@ -94,7 +94,7 @@ All cheat sheets follow these standards:
 - **Links**: Internal navigation and external resources
 - **Emojis**: Visual cues for better scanning
 
-## 💡 Tips for Maximum Benefit
+## Tips for Maximum Benefit
 
 1. **Bookmark**: Add this repository to your browser bookmarks
 2. **Star**: Star the repository to keep track of updates
